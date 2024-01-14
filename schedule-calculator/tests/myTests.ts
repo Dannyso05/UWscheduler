@@ -1,10 +1,10 @@
-import Course from '../src/Course';
-import Section from '../src/Section';
-import WeeklySection from '../src/WeeklySection';
-import { ComponentSection } from "../src/ComponentSection";
-import { Days } from "../src/Days";
-import Timeslot from '../src/Timeslot'
-import Time from '../src/Time'
+import Course from '../src/course-structure/Course';
+import Section from '../src/course-structure/Section';
+import WeeklySection from '../src/course-structure/WeeklySection';
+import { ComponentSection } from "../src/course-structure/ComponentSection";
+import { Days } from "../src/course-structure/Days";
+import Timeslot from '../src/course-structure/Timeslot'
+import Time from '../src/course-structure/Time'
 
 
 let days = [Days.monday, Days.wednesday, Days.friday, 4];

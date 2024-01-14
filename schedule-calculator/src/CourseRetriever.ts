@@ -1,6 +1,6 @@
-import Course from "./Course";
-import CourseBank from "./CourseBank";
-import Section from "./Section";
+import Course from "./course-structure/Course";
+import CourseBank from "./course-structure/CourseBank";
+import Section from "./course-structure/Section";
 
 /**
  * Will be fully implemented once data collection and storing is finished.
