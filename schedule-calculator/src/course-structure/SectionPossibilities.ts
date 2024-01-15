@@ -5,42 +5,47 @@ import Section from "./Section";
  * Used to categorize options that students have to pick from.
  */
 export default class SectionPossibilities {
-    private sections: Section[];
+    private _sections: Section[];
     
     constructor(sections: Section[]) {
-        this.sections = [];
-
-        for (var section of sections) {
-            this.addSection(section);
-        }
+        this._sections = [];
+        this.addSections(sections);
     }
 
     private getSections(): Section[] {
-        return this.sections;
+        return this._sections;
     }
 
     getSection(index: number): Section {
-        return this.sections[index];
+        return this._sections[index];
     }
 
     canAddSection(section: Section): boolean {
-        if (this.sections.length == 0) {
+        if (this._sections.length == 0) {
             return true;
         }
 
-        return this.sections[0].getComponentSection() == section.getComponentSection() && this.sections[0].isTimeEqual(section);
+        return this._sections[0].componentSection == section.componentSection && this._sections[0].isTimeEqual(section);
     }
 
     addSection(section: Section): boolean {
         if (this.canAddSection(section)) {
-            this.sections.push(section);
+            this._sections.push(section);
             return true;
         }
 
         return false;
     }
 
-    getLength(): number {
-        return this.sections.length;
+    addSections(sections: Section[]): boolean[] {
+        let result: boolean[] = []
+        for (var section of sections) {
+            result.push(this.addSection(section));
+        }
+        return result;
+    }
+
+    get length(): number {
+        return this._sections.length;
     }
 }

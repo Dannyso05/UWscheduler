@@ -5,62 +5,62 @@ import { ComponentSection } from "./ComponentSection";
  * Represents a full class, with all it's sections.
  */
 export default class Course {
-    private subject: String;
-    private catalogNumber: number;
-    private units: number;
-    private courseTitle: String;
-    private sections: Section[];
-    private components: Map<ComponentSection, Section[]>;
-    private instructors: String[];
+    private _subject: String;
+    private _catalogNumber: number;
+    private _units: number;
+    private _courseTitle: String;
+    private _sections: Section[];
+    private _components: Map<ComponentSection, Section[]>;
+    private _instructors: String[];
 
     constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[]) {
-        this.subject = subject;
-        this.catalogNumber = catalogNumber;
-        this.units = units;
-        this.courseTitle = courseTitle;
-        this.sections = sections;
-        this.components = new Map();
+        this._subject = subject;
+        this._catalogNumber = catalogNumber;
+        this._units = units;
+        this._courseTitle = courseTitle;
+        this._sections = sections;
+        this._components = new Map();
         this.makeComponents();
-        this.instructors = [];
+        this._instructors = [];
     }
 
-    getComponents(): Map<ComponentSection, Section[]> { return this.components; }
+    get components(): Map<ComponentSection, Section[]> { return this._components; }
     makeComponents(): void {
-        this.components = new Map();
-        for (var section of this.sections) {
+        this._components = new Map();
+        for (var section of this._sections) {
             this.pushToComponents(section);
         }
     }
 
     private pushToComponents(section: Section) {
-        if (!this.components.has(section.getComponentSection())) {
-            this.components.set(section.getComponentSection(), []);
+        if (!this.components.has(section.componentSection)) {
+            this.components.set(section.componentSection, []);
         }
-        this.components.get(section.getComponentSection())?.push(section);
+        this.components.get(section.componentSection)?.push(section);
     }
 
-    getName(): String {
-        return this.subject + " " + this.catalogNumber.toString();
+    get name(): String {
+        return this._subject + " " + this._catalogNumber.toString();
     }
 
-    getSubject(): String { return this.subject; }
-    setSubject(subject: String): void { this.subject = subject; }
+    get subject(): String { return this._subject; }
+    set subject(subject: String) { this._subject = subject; }
 
-    getCatalogNumber(): number { return this.catalogNumber; }
-    setCatalogNumber(catalogNumber: number): void { this.catalogNumber = catalogNumber; }
+    get catalogNumber(): number { return this._catalogNumber; }
+    set catalogNumber(catalogNumber: number) { this._catalogNumber = catalogNumber; }
 
-    getUnits(): number { return this.units; }
-    setUnits(units: number): void { this.units = units; }
+    get units(): number { return this._units; }
+    set units(units: number) { this._units = units; }
 
-    getCourseTitle(): String { return this.courseTitle; }
-    setCourseTitle(courseTitle: String): void { this.courseTitle = courseTitle; }
+    get courseTitle(): String { return this._courseTitle; }
+    set courseTitle(courseTitle: String) { this._courseTitle = courseTitle; }
 
-    getSections(): Section[] { return this.sections; }
-    setSections(sections: Section[]): void {
-        this.sections = sections;
+    get sections(): Section[] { return this._sections; }
+    set sections(sections: Section[]) {
+        this._sections = sections;
         this.makeComponents();
     }
 
-    getInstructors(): String[] { return this.instructors; }
-    setInstructors(instructors: String[]) { this.instructors = instructors; }
+    get instructors(): String[] { return this._instructors; }
+    set instructors(instructors: String[]) { this._instructors = instructors; }
 }

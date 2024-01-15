@@ -1,16 +1,16 @@
 import Course from "./Course";
 
 export default class CourseBank {
-    private courseMap: Map<String, Course>;
+    private _courseMap: Map<String, Course>;
 
     constructor(courses: Course[]) {
-        this.courseMap = new Map();
+        this._courseMap = new Map();
         for (var course of courses) {
-            this.courseMap.set(course.getName(), course);
+            this._courseMap.set(course.name, course);
         }
     }
 
-    getCourseMap(): Map<String, Course> { return this.courseMap; }
+    get courseMap(): Map<String, Course> { return this._courseMap; }
     getCourse(courseName: String): Course | undefined {
         return this.courseMap.get(courseName);
     }
@@ -18,7 +18,7 @@ export default class CourseBank {
         return this.courseMap.has(courseName);
     }
     addCourse(course: Course): void {
-        this.courseMap.set(course.getName(), course);
+        this.courseMap.set(course.name, course);
     }
     clear(): void {
         this.courseMap.clear();

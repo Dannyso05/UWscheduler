@@ -24,14 +24,14 @@ describe('Course class tests', () => {
     });
 
     it('getSections should return the correct sections', () => {
-        const sections = course.getSections();
+        const sections = course.sections;
         expect(sections).toHaveLength(3);
         expect(sections[0]).toBeInstanceOf(Section);
         expect(sections).toBe(sections);
     });
 
     it('getName', () => {
-        expect(course.getName()).toBe("Math 101");
+        expect(course.name).toBe("Math 101");
     });
 
     it('setSections should update the sections and components', () => {
@@ -40,13 +40,13 @@ describe('Course class tests', () => {
             new WeeklySection(5, ComponentSection.TUT, days, timeslot, 40, 30, 'Dr. Brown'),
         ];
 
-        course.setSections(newSections);
+        course.sections = newSections;
 
-        const sections = course.getSections();
+        const sections = course.sections;
         expect(sections).toHaveLength(2);
         expect(sections[0]).toBeInstanceOf(Section);
 
-        const components = course.getComponents();
+        const components = course.components;
         expect(components.size).toBe(2);
         expect(components.get(ComponentSection.LEC)).toHaveLength(1);
         expect(components.get(ComponentSection.TUT)).toHaveLength(1);

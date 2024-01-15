@@ -9,8 +9,8 @@ import { ComponentSection } from "./ComponentSection";
  */
 export default class WeeklySection extends Section {
     // days must be in order from sunday to saturday, as listed in ./Days.ts
-    private days: Days[];
-    private timeslot: Timeslot;
+    private _days: Days[];
+    private _timeslot: Timeslot;
 
     constructor(classNumber: number, componentSection: ComponentSection, days: Days[], timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String) {
@@ -21,7 +21,7 @@ export default class WeeklySection extends Section {
 
     isTimeEqual(otherSection: Section): boolean {
         if (otherSection instanceof WeeklySection) {
-            return this.areDaysEqual(otherSection) && this.getTimeslot().equals(otherSection.getTimeslot());
+            return this.areDaysEqual(otherSection) && this.timeslot.equals(otherSection.timeslot);
         } else if (otherSection instanceof OneTimeSection) {
             return false;
         }
@@ -30,12 +30,12 @@ export default class WeeklySection extends Section {
     }
 
     areDaysEqual(otherSection: WeeklySection): boolean {
-        if (this.days.length != otherSection.getDays().length) {
+        if (this.days.length != otherSection.days.length) {
             return false;
         }
 
         for (let i = 0; i < this.days.length; i++) {
-            if (this.days[i] != otherSection.getDays()[i]) {
+            if (this.days[i] != otherSection.days[i]) {
                 return false;
             }
         }
@@ -45,7 +45,7 @@ export default class WeeklySection extends Section {
 
     doesOverlap(otherSection: Section): boolean {
         if (otherSection instanceof WeeklySection) {
-            return this.getTimeslot().doesOverlap(otherSection.getTimeslot()) && this.doDaysOverlap(otherSection);
+            return this.timeslot.doesOverlap(otherSection.timeslot) && this.doDaysOverlap(otherSection);
         } else if (otherSection instanceof OneTimeSection) {
             return otherSection.doesOverlap(this);
         }
@@ -54,17 +54,17 @@ export default class WeeklySection extends Section {
     }
 
     doDaysOverlap(otherSection: WeeklySection): boolean {
-        for (var day of this.getDays()) {
-            if (otherSection.getDays().includes(day)) {
+        for (var day of this.days) {
+            if (otherSection.days.includes(day)) {
                 return true;
             }
         }
         return false;
     }
 
-    getDays(): Days[] { return this.days; }
-    setDays(days: Days[]): void { this.days = days; }
+    get days(): Days[] { return this._days; }
+    set days(days: Days[]) { this._days = days; }
 
-    getTimeslot(): Timeslot { return this.timeslot; }
-    setTimeslot(timeslot: Timeslot): void { this.timeslot = timeslot; }
+    get timeslot(): Timeslot { return this._timeslot; }
+    set timeslot(timeslot: Timeslot) { this._timeslot = timeslot; }
 }

@@ -9,7 +9,7 @@ describe('CourseBank class tests', () => {
         const courses = [course1, course2];
         const courseBank = new CourseBank(courses);
 
-        const courseMap = courseBank.getCourseMap();
+        const courseMap = courseBank.courseMap;
         expect(courseMap.size).toBe(2);
         expect(courseMap.get('Math 101')).toBe(course1);
         expect(courseMap.get('Physics 202')).toBe(course2);
@@ -17,7 +17,7 @@ describe('CourseBank class tests', () => {
 
     it('getCourseMap should return the courseMap', () => {
         const courseBank = new CourseBank([]);
-        const courseMap = courseBank.getCourseMap();
+        const courseMap = courseBank.courseMap;
 
         expect(courseMap).toBeInstanceOf(Map);
         expect(courseMap.size).toBe(0);
@@ -45,7 +45,7 @@ describe('CourseBank class tests', () => {
 
         courseBank.addCourse(course1);
 
-        const courseMap = courseBank.getCourseMap();
+        const courseMap = courseBank.courseMap;
         expect(courseMap.size).toBe(1);
         expect(courseMap.get('Math 101')).toBe(course1);
     });
@@ -55,7 +55,7 @@ describe('CourseBank class tests', () => {
 
         courseBank.clear();
 
-        const courseMap = courseBank.getCourseMap();
+        const courseMap = courseBank.courseMap;
         expect(courseMap.size).toBe(0);
     });
 });

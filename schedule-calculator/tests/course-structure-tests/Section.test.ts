@@ -14,8 +14,8 @@ describe('All Sections', () => {
     describe('constructor', () => {
         it('should create a WeeklySection instance with correct properties', () => {
             expect(weeklySection).toBeInstanceOf(WeeklySection);
-            expect(weeklySection.getDays()).toEqual(days);
-            expect(weeklySection.getTimeslot()).toEqual(timeslot);
+            expect(weeklySection.days).toEqual(days);
+            expect(weeklySection.timeslot).toEqual(timeslot);
         });
     });
 
@@ -70,8 +70,8 @@ describe('All Sections', () => {
             const oneTimeSection = new OneTimeSection(1, ComponentSection.TST, date, timeslot, 30, 0, 'Instructor');
 
             expect(oneTimeSection).toBeInstanceOf(OneTimeSection);
-            expect(oneTimeSection.getDate()).toEqual(date);
-            expect(oneTimeSection.getTimeslot()).toEqual(timeslot);
+            expect(oneTimeSection.date).toEqual(date);
+            expect(oneTimeSection.timeslot).toEqual(timeslot);
         });
     });
 

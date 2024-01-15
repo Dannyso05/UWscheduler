@@ -8,8 +8,8 @@ import { ComponentSection } from "./ComponentSection";
  */
 export default class OneTimeSection extends Section {
     // date must only store month, date, year (not seconds, minutes, etc.).
-    private date: Date;
-    private timeslot: Timeslot;
+    private _date: Date;
+    private _timeslot: Timeslot;
 
     constructor(classNumber: number, componentSection: ComponentSection, date: Date, timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String) {
@@ -22,7 +22,7 @@ export default class OneTimeSection extends Section {
         if (otherSection instanceof WeeklySection) {
             return false;
         } else if (otherSection instanceof OneTimeSection) {
-            return this.getDate().getTime() == otherSection.getDate().getTime() && this.getTimeslot().doesOverlap(otherSection.getTimeslot());
+            return this.date.getTime() == otherSection.date.getTime() && this.timeslot.doesOverlap(otherSection.timeslot);
         }
 
         return false;
@@ -32,15 +32,15 @@ export default class OneTimeSection extends Section {
         if (otherSection instanceof WeeklySection) {
             return false;
         } else if (otherSection instanceof OneTimeSection) {
-            return (this.date.getTime() == otherSection.getDate().getTime()) && this.timeslot.equals(otherSection.getTimeslot());
+            return (this.date.getTime() == otherSection.date.getTime()) && this.timeslot.equals(otherSection.timeslot);
         }
 
         return false;
     }
 
-    getDate(): Date { return this.date; }
-    setDate(date: Date) { this.date = date; }
+    get date(): Date { return this._date; }
+    set date(date: Date) { this._date = date; }
 
-    getTimeslot(): Timeslot { return this.timeslot; }
-    setTimeslot(timeslot: Timeslot) { this.timeslot = timeslot; }
+    get timeslot(): Timeslot { return this._timeslot; }
+    set timeslot(timeslot: Timeslot) { this._timeslot = timeslot; }
 }

@@ -14,7 +14,7 @@ describe('SchedulePossibilities class tests', () => {
     it('constructor should initialize sectionPossibilitiesList as an empty array', () => {
         const schedulePossibilities = new SchedulePossibilities();
 
-        expect(schedulePossibilities.getLength()).toEqual(0);
+        expect(schedulePossibilities.length).toEqual(0);
     });
 
     it('canAddSectionPossibilities should return false if sectionPossibilities has no sections', () => {
@@ -42,7 +42,7 @@ describe('SchedulePossibilities class tests', () => {
 
         expect(canAdd).toBe(true);
         schedulePossibilities.addSectionPossibilities(newSectionPossibilities);
-        expect(schedulePossibilities.getLength()).toBe(4);
+        expect(schedulePossibilities.length).toBe(4);
         expect(schedulePossibilities.getSectionPossibilities(3)).toBe(newSectionPossibilities);
     });
 
@@ -62,7 +62,7 @@ describe('SchedulePossibilities class tests', () => {
 
         expect(canAdd).toBe(true);
         schedulePossibilities.addSectionPossibilities(newSectionPossibilities);
-        expect(schedulePossibilities.getLength()).toBe(4);
+        expect(schedulePossibilities.length).toBe(4);
         expect(schedulePossibilities.getSectionPossibilities(3)).toBe(newSectionPossibilities);
     });
 
@@ -82,7 +82,7 @@ describe('SchedulePossibilities class tests', () => {
 
         expect(canAdd).toBe(true);
         schedulePossibilities.addSectionPossibilities(newSectionPossibilities);
-        expect(schedulePossibilities.getLength()).toBe(4);
+        expect(schedulePossibilities.length).toBe(4);
         expect(schedulePossibilities.getSectionPossibilities(3)).toBe(newSectionPossibilities);
     });
 
@@ -100,10 +100,10 @@ describe('SchedulePossibilities class tests', () => {
         const newSectionPossibilities = new SectionPossibilities([new WeeklySection(3, ComponentSection.TUT, [Days.monday], new Timeslot(new Time(12, 0), new Time(14, 30)), 40, 30, 'Dr. Brown')]);
         const canAdd = schedulePossibilities.canAddSectionPossibilities(newSectionPossibilities);
 
-        expect(schedulePossibilities.getLength()).toBe(3);
+        expect(schedulePossibilities.length).toBe(3);
         expect(canAdd).toBe(false);
         schedulePossibilities.addSectionPossibilities(newSectionPossibilities);
-        expect(schedulePossibilities.getLength()).toBe(3);
+        expect(schedulePossibilities.length).toBe(3);
     });
 
     it('getSectionPossibilities should return the sectionPossibilities at the specified index', () => {

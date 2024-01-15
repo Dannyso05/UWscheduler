@@ -29,11 +29,11 @@ describe("Time", () => {
     });
 
     it('Test get hours 1', () => {
-        expect(time1.getHours()).toBe(4);
+        expect(time1.hours).toBe(4);
     });
 
     it('Test get hours 2', () => {
-        expect(time2.getHours()).toBe(5);
+        expect(time2.hours).toBe(5);
     });
 })
 

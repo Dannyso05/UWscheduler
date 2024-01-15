@@ -6,11 +6,11 @@ import { ComponentSection } from "./ComponentSection";
  * Represents a specific section of a class.
  */
 export default abstract class Section {
-    private classNumber: number;
-    private componentSection: ComponentSection;
-    private enrolCap: number;
-    private enrolTotal: number;
-    private instructor: String;
+    private _classNumber: number;
+    private _componentSection: ComponentSection;
+    private _enrolCap: number;
+    private _enrolTotal: number;
+    private _instructor: String;
 
     constructor(classNumber: number, componentSection: ComponentSection,
         enrolCap: number, enrolTotal: number, instructor: String) {
@@ -28,18 +28,18 @@ export default abstract class Section {
         return this.enrolTotal < this.enrolCap;
     }
 
-    getClassNumber(): number { return this.classNumber; }
-    setClassNumber(classNumber: number): void { this.classNumber = classNumber; }
+    get classNumber(): number { return this._classNumber; }
+    set classNumber(classNumber: number) { this._classNumber = classNumber; }
 
-    getComponentSection(): ComponentSection { return this.componentSection; }
-    setComponentSection(componentSection: ComponentSection): void { this.componentSection = componentSection; }
+    get componentSection(): ComponentSection { return this._componentSection; }
+    set componentSection(componentSection: ComponentSection) { this._componentSection = componentSection; }
 
-    getEnrolCap(): number { return this.enrolCap; }
-    setEnrolCap(enrolCap: number): void { this.enrolCap = enrolCap; }
+    get enrolCap(): number { return this._enrolCap; }
+    set enrolCap(enrolCap: number) { this._enrolCap = enrolCap; }
 
-    getEnrolTotal(): number { return this.enrolTotal; }
-    setEnrolTotal(enrolTotal: number): void { this.enrolTotal = enrolTotal; }
+    get enrolTotal(): number { return this._enrolTotal; }
+    set enrolTotal(enrolTotal: number) { this._enrolTotal = enrolTotal; }
 
-    getInstructor(): String { return this.instructor; }
-    setInstructor(instructor: String): void { this.instructor = instructor; }
+    get instructor(): String { return this._instructor; }
+    set instructor(instructor: String) { this._instructor = instructor; }
 }

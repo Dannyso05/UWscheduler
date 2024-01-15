@@ -3,20 +3,20 @@ import SectionPossibilities from "./SectionPossibilities";
 
 export default class SchedulePossibilities {
     // All SectionPossibilities have a length of at least 1.
-    private sectionPossibilitiesList: SectionPossibilities[];
+    private _sectionPossibilitiesList: SectionPossibilities[];
 
     constructor() {
-        this.sectionPossibilitiesList = [];
+        this._sectionPossibilitiesList = [];
     }
 
-    private getSectionPossibilitiesList(): SectionPossibilities[] { return this.sectionPossibilitiesList; }
+    private getSectionPossibilitiesList(): SectionPossibilities[] { return this._sectionPossibilitiesList; }
 
     canAddSectionPossibilities(sectionPossibilities: SectionPossibilities): boolean {
-        if (sectionPossibilities.getLength() == 0) {
+        if (sectionPossibilities.length == 0) {
             return false;
         }
 
-        for (var sps of this.sectionPossibilitiesList) {
+        for (var sps of this._sectionPossibilitiesList) {
             if (sps.getSection(0).doesOverlap(sectionPossibilities.getSection(0))) {
                 return false;
             }
@@ -27,18 +27,26 @@ export default class SchedulePossibilities {
 
     addSectionPossibilities(sectionPossibilities: SectionPossibilities): boolean {
         if (this.canAddSectionPossibilities(sectionPossibilities)) {
-            this.sectionPossibilitiesList.push(sectionPossibilities);
+            this._sectionPossibilitiesList.push(sectionPossibilities);
             return true;
         }
 
         return false;
     }
 
-    getSectionPossibilities(index: number): SectionPossibilities {
-        return this.sectionPossibilitiesList[index];
+    addMultipleSectionPossibilities(sections: SectionPossibilities[]): boolean[] {
+        let result: boolean[] = []
+        for (var section of sections) {
+            result.push(this.addSectionPossibilities(section));
+        }
+        return result;
     }
 
-    getLength(): number {
-        return this.sectionPossibilitiesList.length;
+    getSectionPossibilities(index: number): SectionPossibilities {
+        return this._sectionPossibilitiesList[index];
+    }
+
+    get length(): number {
+        return this._sectionPossibilitiesList.length;
     }
 }

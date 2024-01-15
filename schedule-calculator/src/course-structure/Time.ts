@@ -2,8 +2,8 @@
  * Represents a time in hours (24 hour schedule) and minutes for a class.
  */
 export default class Time {
-    private hours: number;
-    private minutes: number;
+    private _hours: number;
+    private _minutes: number;
 
     constructor(hours: number, minutes: number) {
         if (hours < 0 || hours > 24) {
@@ -13,24 +13,24 @@ export default class Time {
             throw "minutes must be between 0 and 60."
         }
 
-        this.hours = hours;
-        this.minutes = minutes;
+        this._hours = hours;
+        this._minutes = minutes;
     }
 
-    getHours(): number {
-        return this.hours;
+    get hours(): number {
+        return this._hours;
     }
 
-    getMinutes(): number {
-        return this.minutes;
+    get minutes(): number {
+        return this._minutes;
     }
 
     equals(otherTime: Time): boolean {
-        return this.getHours() == otherTime.getHours() && this.getMinutes() == otherTime.getMinutes();
+        return this.hours == otherTime.hours && this.minutes == otherTime.minutes;
     }
 
     afterThan(otherTime : Time): boolean {
-        return (this.getHours() > otherTime.getHours()) || (this.getHours() == otherTime.getHours() && this.getMinutes() > otherTime.getMinutes())
+        return (this.hours > otherTime.hours) || (this.hours == otherTime.hours && this.minutes > otherTime.minutes)
     }
 
     toString(): String {
@@ -38,6 +38,6 @@ export default class Time {
     }
 
     copy(): Time {
-        return new Time(this.getHours(), this.getMinutes());
+        return new Time(this.hours, this.minutes);
     }
 }

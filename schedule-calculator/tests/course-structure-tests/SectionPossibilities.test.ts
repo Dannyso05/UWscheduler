@@ -14,7 +14,7 @@ describe('SectionPossibilities class tests', () => {
         const sections = [section1, section2];
         const sectionPossibilities = new SectionPossibilities(sections);
 
-        expect(sectionPossibilities.getLength()).toBe(2);
+        expect(sectionPossibilities.length).toBe(2);
         expect(sectionPossibilities.getSection(0)).toBe(section1);
         expect(sectionPossibilities.getSection(1)).toBe(section2);
     });
@@ -54,7 +54,7 @@ describe('SectionPossibilities class tests', () => {
 
         sectionPossibilities.addSection(section2);
 
-        expect(sectionPossibilities.getLength()).toBe(2);
+        expect(sectionPossibilities.length).toBe(2);
         expect(sectionPossibilities.getSection(1)).toBe(section2);
     });
 
@@ -63,7 +63,7 @@ describe('SectionPossibilities class tests', () => {
 
         sectionPossibilities.addSection(section3);
 
-        expect(sectionPossibilities.getLength()).toBe(1);
+        expect(sectionPossibilities.length).toBe(1);
         expect(sectionPossibilities.getSection(1)).toBeUndefined();
     });
 });
