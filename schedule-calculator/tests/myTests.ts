@@ -7,7 +7,7 @@ import Timeslot from '../src/course-structure/Timeslot'
 import Time from '../src/course-structure/Time'
 import SchedulePossibilities from '../src/course-structure/SchedulePossibilities';
 import SectionPossibilities from '../src/course-structure/SectionPossibilities';
-import TimeConstraint from '../src/constraints/TimeConstraint';
+import TimeConstraint from '../src/constraints/WeeklyTimeConstraint';
 
 
 let tc = new TimeConstraint();
