@@ -5,7 +5,9 @@ export default class SchedulePossibilities {
     // All SectionPossibilities have a length of at least 1.
     private sectionPossibilitiesList: SectionPossibilities[];
 
-    constructor() { }
+    constructor() {
+        this.sectionPossibilitiesList = [];
+    }
 
     private getSectionPossibilitiesList(): SectionPossibilities[] { return this.sectionPossibilitiesList; }
 
@@ -34,5 +36,9 @@ export default class SchedulePossibilities {
 
     getSectionPossibilities(index: number): SectionPossibilities {
         return this.sectionPossibilitiesList[index];
+    }
+
+    getLength(): number {
+        return this.sectionPossibilitiesList.length;
     }
 }
