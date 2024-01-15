@@ -16,13 +16,13 @@ import Section from "./course-structure/Section";
     }
 
     getSection(courseName: String, classNumber: number): Section | undefined {
-        let sections = this.courseBank.getCourse(courseName)?.getSections();
+        let sections = this.courseBank.getCourse(courseName)?.sections;
         if (sections == undefined) {
             return undefined;
         }
 
         for (var section of sections) {
-            if (section.getClassNumber() == classNumber) {
+            if (section.classNumber == classNumber) {
                 return section;
             }
         }
