@@ -46,6 +46,14 @@ export default class SchedulePossibilities {
         return this._sectionPossibilitiesList[index];
     }
 
+    removeSectionPossibilities(index: number): void {
+        this._sectionPossibilitiesList.splice(index, 1);
+    }
+
+    removeLastSectionPossibilities(): void {
+        this._sectionPossibilitiesList.splice(this._sectionPossibilitiesList.length-1, 1);
+    }
+
     get length(): number {
         return this._sectionPossibilitiesList.length;
     }

@@ -3,6 +3,7 @@ import SectionPossibilities from "../course-structure/SectionPossibilities";
 import Timeslot from "../course-structure/Timeslot";
 import WeeklySection from "../course-structure/WeeklySection";
 import Constraint from "./Constraint";
+import { ConstraintApplied } from "./ConstraintApplied";
 
 export default class WeeklyTimeConstraint extends Constraint {
     private _mustBeWithin: boolean;
@@ -10,7 +11,7 @@ export default class WeeklyTimeConstraint extends Constraint {
 
     constructor() {
         super();
-        this.duringCalculation = false;
+        this._constraintApplied = ConstraintApplied.afterSectionGrouping;
     }
 
     isValid(currentSchedule: SchedulePossibilities, section: SectionPossibilities): boolean {

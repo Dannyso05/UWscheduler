@@ -1,3 +1,5 @@
+import TimeError from "./TimeError";
+
 /**
  * Represents a time in hours (24 hour schedule) and minutes for a class.
  */
@@ -7,10 +9,10 @@ export default class Time {
 
     constructor(hours: number, minutes: number) {
         if (hours < 0 || hours > 24) {
-            throw "hours must be between 0 and 24."
+            throw new TimeError("hours must be between 0 and 24.");
         }
         if (minutes < 0 || minutes > 60) {
-            throw "minutes must be between 0 and 60."
+            throw new TimeError("minutes must be between 0 and 60.");
         }
 
         this._hours = hours;

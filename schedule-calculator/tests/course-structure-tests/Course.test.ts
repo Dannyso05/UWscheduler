@@ -15,9 +15,9 @@ describe('Course class tests', () => {
         days = [Days.monday, Days.wednesday, Days.friday];
         timeslot = new Timeslot(new Time(10, 0), new Time(12, 0));
         const sections = [
-            new WeeklySection(1, ComponentSection.LEC, days, timeslot, 50, 20, 'Dr. Smith'),
-            new WeeklySection(2, ComponentSection.LEC, days, timeslot, 30, 25, 'Prof. Johnson'),
-            new WeeklySection(3, ComponentSection.TUT, days, timeslot, 40, 30, 'Dr. Brown'),
+            new WeeklySection("CS 136", 1, ComponentSection.LEC, days, timeslot, 50, 20, 'Dr. Smith'),
+            new WeeklySection("CS 136", 2, ComponentSection.LEC, days, timeslot, 30, 25, 'Prof. Johnson'),
+            new WeeklySection("CS 136", 3, ComponentSection.TUT, days, timeslot, 40, 30, 'Dr. Brown'),
         ];
 
         course = new Course('Math', 101, 3, 'Introduction to Math', sections);
@@ -36,8 +36,8 @@ describe('Course class tests', () => {
 
     it('setSections should update the sections and components', () => {
         const newSections = [
-            new WeeklySection(4, ComponentSection.LEC, days, timeslot, 30, 25, 'Prof. Johnson'),
-            new WeeklySection(5, ComponentSection.TUT, days, timeslot, 40, 30, 'Dr. Brown'),
+            new WeeklySection("CS 136", 4, ComponentSection.LEC, days, timeslot, 30, 25, 'Prof. Johnson'),
+            new WeeklySection("CS 136", 5, ComponentSection.TUT, days, timeslot, 40, 30, 'Dr. Brown'),
         ];
 
         course.sections = newSections;
@@ -54,14 +54,14 @@ describe('Course class tests', () => {
     });
 
     it('doesOverlap should return true for overlapping sections', () => {
-        const section1 = new WeeklySection(1, ComponentSection.LEC, days, timeslot, 50, 20, 'Dr. Smith');
-        const section2 = new WeeklySection(2, ComponentSection.LEC, days, timeslot, 30, 25, 'Prof. Johnson');
+        const section1 = new WeeklySection("CS 136", 1, ComponentSection.LEC, days, timeslot, 50, 20, 'Dr. Smith');
+        const section2 = new WeeklySection("CS 136", 2, ComponentSection.LEC, days, timeslot, 30, 25, 'Prof. Johnson');
         expect(section1.doesOverlap(section2)).toBe(true);
     });
 
     it('doesOverlap should return false for non-overlapping sections', () => {
-        const section1 = new WeeklySection(1, ComponentSection.LEC, days, timeslot, 50, 20, 'Dr. Smith');
-        const section2 = new WeeklySection(2, ComponentSection.LEC, days, new Timeslot(new Time(12, 0), new Time(14, 0)), 30, 25, 'Prof. Johnson');
+        const section1 = new WeeklySection("CS 136", 1, ComponentSection.LEC, days, timeslot, 50, 20, 'Dr. Smith');
+        const section2 = new WeeklySection("CS 136", 2, ComponentSection.LEC, days, new Timeslot(new Time(12, 0), new Time(14, 0)), 30, 25, 'Prof. Johnson');
         expect(section1.doesOverlap(section2)).toBe(false);
     });
 });

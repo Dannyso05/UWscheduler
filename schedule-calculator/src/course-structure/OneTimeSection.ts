@@ -11,9 +11,9 @@ export default class OneTimeSection extends Section {
     private _date: Date;
     private _timeslot: Timeslot;
 
-    constructor(classNumber: number, componentSection: ComponentSection, date: Date, timeslot: Timeslot,
+    constructor(courseName: String, classNumber: number, componentSection: ComponentSection, date: Date, timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String) {
-        super(classNumber, componentSection, enrolCap, enrolTotal, instructor);
+        super(courseName, classNumber, componentSection, enrolCap, enrolTotal, instructor);
         this.date = date;
         this.timeslot = timeslot;
     }

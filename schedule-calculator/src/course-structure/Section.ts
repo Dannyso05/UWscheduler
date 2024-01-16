@@ -6,14 +6,16 @@ import { ComponentSection } from "./ComponentSection";
  * Represents a specific section of a class.
  */
 export default abstract class Section {
+    private _courseName: String;
     private _classNumber: number;
     private _componentSection: ComponentSection;
     private _enrolCap: number;
     private _enrolTotal: number;
     private _instructor: String;
 
-    constructor(classNumber: number, componentSection: ComponentSection,
+    constructor(courseName: String, classNumber: number, componentSection: ComponentSection,
         enrolCap: number, enrolTotal: number, instructor: String) {
+        this.courseName = courseName;
         this.classNumber = classNumber;
         this.componentSection = componentSection;
         this.enrolCap = enrolCap;
@@ -27,6 +29,13 @@ export default abstract class Section {
     isOpen(): boolean {
         return this.enrolTotal < this.enrolCap;
     }
+
+    toString(): String {
+        return this.classNumber.toString();
+    }
+
+    get courseName(): String { return this._courseName; }
+    set courseName(courseName: String) { this._courseName = courseName; }
 
     get classNumber(): number { return this._classNumber; }
     set classNumber(classNumber: number) { this._classNumber = classNumber; }

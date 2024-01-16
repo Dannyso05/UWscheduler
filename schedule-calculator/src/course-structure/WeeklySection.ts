@@ -12,9 +12,9 @@ export default class WeeklySection extends Section {
     private _days: Days[];
     private _timeslot: Timeslot;
 
-    constructor(classNumber: number, componentSection: ComponentSection, days: Days[], timeslot: Timeslot,
+    constructor(courseName: String, classNumber: number, componentSection: ComponentSection, days: Days[], timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String) {
-        super(classNumber, componentSection, enrolCap, enrolTotal, instructor);
+        super(courseName, classNumber, componentSection, enrolCap, enrolTotal, instructor);
         this.days = days;
         this.timeslot = timeslot;
     }

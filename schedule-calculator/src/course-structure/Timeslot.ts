@@ -1,4 +1,5 @@
 import Time from "./Time"
+import TimeError from "./TimeError";
 
 
 /**
@@ -11,7 +12,7 @@ export default class Timeslot {
 
     constructor(startTime: Time, endTime: Time) {
         if (startTime.afterThan(endTime)) {
-            throw "Start time must be before or equal to end time.";
+            throw new TimeError("Start time must be before or equal to end time.");
         }
 
         this._startTime = startTime;

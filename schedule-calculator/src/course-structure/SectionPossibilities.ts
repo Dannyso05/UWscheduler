@@ -6,7 +6,7 @@ import Section from "./Section";
  */
 export default class SectionPossibilities {
     private _sections: Section[];
-    
+
     constructor(sections: Section[]) {
         this._sections = [];
         this.addSections(sections);
@@ -25,7 +25,8 @@ export default class SectionPossibilities {
             return true;
         }
 
-        return this._sections[0].componentSection == section.componentSection && this._sections[0].isTimeEqual(section);
+        return this._sections[0].courseName == section.courseName && this._sections[0].componentSection == section.componentSection
+            && this._sections[0].isTimeEqual(section);
     }
 
     addSection(section: Section): boolean {

@@ -36,7 +36,7 @@ export default class Course {
         if (!this.components.has(section.componentSection)) {
             this.components.set(section.componentSection, []);
         }
-        this.components.get(section.componentSection)?.push(section);
+        this.components.get(section.componentSection).push(section);
     }
 
     get name(): String {
