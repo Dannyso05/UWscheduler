@@ -1,5 +1,5 @@
 import SchedulePossibilities from "../course-structure/SchedulePossibilities";
-import SectionPossibilities from "../course-structure/SectionPossibilities";
+import Section from "../course-structure/Section";
 import Timeslot from "../course-structure/Timeslot";
 import WeeklySection from "../course-structure/WeeklySection";
 import Constraint from "./Constraint";
@@ -11,22 +11,16 @@ export default class WeeklyTimeConstraint extends Constraint {
 
     constructor() {
         super();
-        this._constraintApplied = ConstraintApplied.afterSectionGrouping;
+        this._constraintApplied = ConstraintApplied.beforeSectionGrouping;
     }
 
-    isValid(currentSchedule: SchedulePossibilities, section: SectionPossibilities): boolean {
-        if (section.length == 0) {
-            return true;
-        }
-
-        let firstSection = section.getSection(0);
-
-        if (firstSection instanceof WeeklySection) {
+    isValid(currentSchedule: SchedulePossibilities, section: Section): boolean {
+        if (section instanceof WeeklySection) {
             if (this.mustBeWithin) {
-                return firstSection.timeslot.isWithin(this.timeslot);
+                return section.timeslot.isWithin(this.timeslot);
             }
 
-            return !firstSection.timeslot.doesOverlap(this.timeslot);
+            return !section.timeslot.doesOverlap(this.timeslot);
         }
 
         return true;

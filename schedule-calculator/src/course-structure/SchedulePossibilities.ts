@@ -57,4 +57,8 @@ export default class SchedulePossibilities {
     get length(): number {
         return this._sectionPossibilitiesList.length;
     }
+
+    convertToJSON(): String {
+        return JSON.stringify(this);
+    }
 }

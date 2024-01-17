@@ -134,6 +134,9 @@ describe('SchedulePossibilities class tests', () => {
 
         schedulePossibilities.removeLastSectionPossibilities();
         expect(schedulePossibilities.length).toBe(3);
+        expect(schedulePossibilities.getSectionPossibilities(0)).toBe(section1);
+        expect(schedulePossibilities.getSectionPossibilities(1)).toBe(section2);
+        expect(schedulePossibilities.getSectionPossibilities(2)).toBe(section3);
 
         schedulePossibilities.removeSectionPossibilities(1);
         expect(schedulePossibilities.length).toBe(2);
