@@ -63,7 +63,7 @@ describe('ScheduleCalculator', () => {
 
     describe('calculateSchedules', () => {
         beforeEach(() => {
-            //const cs136S1: Section = new WeeklySection("CS 136", 6021, )
+            // const cs136S1: Section = new WeeklySection("CS 136", 6021, )
         });
 
         it('creates all valid schedules', () => {

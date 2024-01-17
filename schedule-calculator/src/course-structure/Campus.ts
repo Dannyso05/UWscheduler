@@ -1,0 +1,3 @@
+export enum Campus {
+    UW, CGC, REN, STJ, UTD, WLU, BLND, BLNDG, BLNDJ, BLNDR, BLNDT, ONLN, ONLNG, ONLNJ, ONLNR, ONLNT, OFF
+}

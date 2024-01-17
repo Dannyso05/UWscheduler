@@ -2,6 +2,8 @@ import Timeslot from "./Timeslot";
 import Section from "./Section";
 import WeeklySection from "./WeeklySection";
 import { Component } from "./Component";
+import { Campus } from "./Campus";
+import { LocationTaught } from "./LocationTaught";
 
 /**
  * Represents a specific section of a class. This section happens once.
@@ -14,9 +16,11 @@ export default class OneTimeSection extends Section {
     constructor();
     constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, date: Date, timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String);
+    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, date: Date, timeslot: Timeslot,
+        enrolCap: number, enrolTotal: number, instructor: String, campus: Campus, locationTaught: LocationTaught);
     constructor(courseName?: String, classNumber?: number, component?: Component, componentNumber?: number, date?: Date,
-        timeslot?: Timeslot, enrolCap?: number, enrolTotal?: number, instructor?: String) {
-        super(courseName, classNumber, component, componentNumber, enrolCap, enrolTotal, instructor);
+        timeslot?: Timeslot, enrolCap?: number, enrolTotal?: number, instructor?: String, campus?: Campus, locationTaught?: LocationTaught) {
+        super(courseName, classNumber, component, componentNumber, enrolCap, enrolTotal, instructor, campus, locationTaught);
         this.date = date;
         this.timeslot = timeslot;
     }
