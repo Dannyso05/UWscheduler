@@ -7,9 +7,13 @@ import Section from "./Section";
 export default class SectionPossibilities {
     private _sections: Section[];
 
-    constructor(sections: Section[]) {
+    constructor();
+    constructor(sections: Section[]);
+    constructor(sections?: Section[]) {
         this._sections = [];
-        this.addSections(sections);
+        if (sections != undefined) {
+            this.addSections(sections);
+        }
     }
 
     private getSections(): Section[] {
@@ -25,7 +29,7 @@ export default class SectionPossibilities {
             return true;
         }
 
-        return this._sections[0].courseName == section.courseName && this._sections[0].componentSection == section.componentSection
+        return this._sections[0].courseName == section.courseName && this._sections[0].component == section.component
             && this._sections[0].isTimeEqual(section);
     }
 

@@ -45,7 +45,7 @@ export default class ScheduleCalculator {
         let possibilitiesAdded: SectionPossibilities[];
         this.sectionPossibilitiesArray = [];
         for (let course of courses) {
-            for (let [componentSection, sections] of Array.from(course.components.entries())) {
+            for (let [component, sections] of Array.from(course.components.entries())) {
                 possibilitiesAdded = [];
                 for (let section of sections) {
                     if (this.satisfyConstraints(undefined, section, this.constraintMap.get(ConstraintApplied.beforeSectionGrouping))) {

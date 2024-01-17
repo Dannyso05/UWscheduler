@@ -1,5 +1,5 @@
 import Section from "./Section";
-import { ComponentSection } from "./ComponentSection";
+import { Component } from "./Component";
 
 /**
  * Represents a full class, with all it's sections.
@@ -10,7 +10,7 @@ export default class Course {
     private _units: number;
     private _courseTitle: String;
     private _sections: Section[];
-    private _components: Map<ComponentSection, Section[]>;
+    private _components: Map<Component, Section[]>;
     private _instructors: String[];
 
     constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[]) {
@@ -24,7 +24,7 @@ export default class Course {
         this._instructors = [];
     }
 
-    get components(): Map<ComponentSection, Section[]> { return this._components; }
+    get components(): Map<Component, Section[]> { return this._components; }
     makeComponents(): void {
         this._components = new Map();
         for (var section of this._sections) {
@@ -33,10 +33,10 @@ export default class Course {
     }
 
     private pushToComponents(section: Section) {
-        if (!this.components.has(section.componentSection)) {
-            this.components.set(section.componentSection, []);
+        if (!this.components.has(section.component)) {
+            this.components.set(section.component, []);
         }
-        this.components.get(section.componentSection).push(section);
+        this.components.get(section.component).push(section);
     }
 
     get name(): String {

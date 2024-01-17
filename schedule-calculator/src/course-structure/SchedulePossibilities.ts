@@ -5,8 +5,13 @@ export default class SchedulePossibilities {
     // All SectionPossibilities have a length of at least 1.
     private _sectionPossibilitiesList: SectionPossibilities[];
 
-    constructor() {
+    constructor();
+    constructor(sectionPossibilitiesList: SectionPossibilities[]);
+    constructor(sectionPossibilitiesList?: SectionPossibilities[]) {
         this._sectionPossibilitiesList = [];
+        if (sectionPossibilitiesList != undefined) {
+            this.addMultipleSectionPossibilities(sectionPossibilitiesList);
+        }
     }
 
     private getSectionPossibilitiesList(): SectionPossibilities[] { return this._sectionPossibilitiesList; }

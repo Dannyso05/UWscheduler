@@ -1,9 +1,10 @@
 import { ConstraintApplied } from "../src/constraints/ConstraintApplied";
 import IsOpenConstraint from "../src/constraints/IsOpenConstraint";
 import WeeklyTimeConstraint from "../src/constraints/WeeklyTimeConstraint";
-import { ComponentSection } from "../src/course-structure/ComponentSection";
+import { Component } from "../src/course-structure/Component";
 import Course from "../src/course-structure/Course";
 import { Days } from "../src/course-structure/Days";
+import SchedulePossibilities from "../src/course-structure/SchedulePossibilities";
 import SectionPossibilities from "../src/course-structure/SectionPossibilities";
 import Time from "../src/course-structure/Time";
 import Timeslot from "../src/course-structure/Timeslot";
@@ -33,19 +34,19 @@ describe('ScheduleCalculator', () => {
     });
 
     it('throws an error when required sections overlap', () => {
-        const section1 = new WeeklySection("CS 136", 1, ComponentSection.LEC, [Days.monday, Days.tuesday], new Timeslot(new Time(9, 0), new Time(10, 0)), 50, 20, 'Dr. Smith');
-        const section2 = new WeeklySection("CS 136", 2, ComponentSection.LEC, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(12, 0)), 30, 25, 'Prof. Johnson');
-        const section3 = new WeeklySection("CS 136", 3, ComponentSection.TUT, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(16, 0)), 40, 30, 'Dr. Brown');
+        const section1 = new WeeklySection("CS 136", 1, Component.LEC, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(9, 0), new Time(10, 0)), 50, 20, 'Dr. Smith');
+        const section2 = new WeeklySection("CS 136", 2, Component.LEC, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(12, 0)), 30, 25, 'Prof. Johnson');
+        const section3 = new WeeklySection("CS 136", 3, Component.TUT, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(16, 0)), 40, 30, 'Dr. Brown');
 
         expect(() => { ScheduleCalculator.calculateSchedules([section1, section2, section3], [], []) }).toThrow(ScheduleError);
     });
 
     describe('createSectionPossibilitiesArray', () => {
         it('creates a valid section possibilities array, in order', () => {
-            const section1 = new WeeklySection("CS 136", 1, ComponentSection.LEC, [Days.monday, Days.tuesday], new Timeslot(new Time(9, 0), new Time(10, 0)), 50, 20, 'Dr. Smith');
-            const section2 = new WeeklySection("CS 136", 2, ComponentSection.LEC, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(12, 0)), 30, 25, 'Prof. Johnson');
-            const section3 = new WeeklySection("CS 136", 3, ComponentSection.TUT, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(16, 0)), 40, 30, 'Dr. Brown');
-            const section4 = new WeeklySection("CS 136", 1, ComponentSection.LEC, [Days.monday, Days.wednesday, Days.friday], new Timeslot(new Time(10, 0), new Time(12, 0)), 30, 0, 'Deniz');
+            const section1 = new WeeklySection("CS 136", 1, Component.LEC, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(9, 0), new Time(10, 0)), 50, 20, 'Dr. Smith');
+            const section2 = new WeeklySection("CS 136", 2, Component.LEC, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(12, 0)), 30, 25, 'Prof. Johnson');
+            const section3 = new WeeklySection("CS 136", 3, Component.TUT, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(16, 0)), 40, 30, 'Dr. Brown');
+            const section4 = new WeeklySection("CS 136", 1, Component.LEC, 1, [Days.monday, Days.wednesday, Days.friday], new Timeslot(new Time(10, 0), new Time(12, 0)), 30, 0, 'Deniz');
 
             const course1 = new Course('Math', 101, 3, 'Introduction to Math', [section1, section2, section3]);
             const course2 = new Course('Physics', 202, 4, 'Advanced Physics', [section4]);
@@ -57,6 +58,30 @@ describe('ScheduleCalculator', () => {
             expect(spa[0]).toHaveLength(1);
             expect(spa[1]).toHaveLength(1);
             expect(spa[2]).toHaveLength(2);
+        });
+    });
+
+    describe('calculateSchedules', () => {
+        beforeEach(() => {
+            //const cs136S1: Section = new WeeklySection("CS 136", 6021, )
+        });
+
+        it('creates all valid schedules', () => {
+            const section1 = new WeeklySection("MATH 136", 1, Component.LEC, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(9, 0), new Time(10, 0)), 50, 20, 'Dr. Smith');
+            const section2 = new WeeklySection("MATH 136", 2, Component.LEC, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(12, 0)), 30, 25, 'Prof. Johnson');
+            const section3 = new WeeklySection("MATH 136", 3, Component.TUT, 1, [Days.monday, Days.tuesday], new Timeslot(new Time(10, 0), new Time(16, 0)), 40, 30, 'Dr. Brown');
+            const section4 = new WeeklySection("ECE 136", 1, Component.LEC, 1, [Days.monday, Days.wednesday, Days.friday], new Timeslot(new Time(17, 0), new Time(18, 0)), 30, 0, 'Deniz');
+
+            const course1 = new Course('Math', 101, 3, 'Introduction to Math', [section1, section2, section3]);
+            const course2 = new Course('Physics', 202, 4, 'Advanced Physics', [section4]);
+            console.log(JSON.stringify(course1));
+            let ans = ScheduleCalculator.calculateSchedules([], [course1, course2], []);
+
+            expect(ans).toHaveLength(1);
+
+            let expected = new SchedulePossibilities();
+            let a = expected.addMultipleSectionPossibilities([new SectionPossibilities([section3]), new SectionPossibilities([section4]), new SectionPossibilities([section1])]);
+            expect(ans[0]).toBe(JSON.stringify(expected));
         });
     });
 });

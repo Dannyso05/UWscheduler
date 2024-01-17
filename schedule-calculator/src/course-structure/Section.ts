@@ -1,6 +1,6 @@
 import Timeslot from "./Timeslot";
 import { Days } from "./Days";
-import { ComponentSection } from "./ComponentSection";
+import { Component } from "./Component";
 
 /**
  * Represents a specific section of a class.
@@ -8,19 +8,24 @@ import { ComponentSection } from "./ComponentSection";
 export default abstract class Section {
     private _courseName: String;
     private _classNumber: number;
-    private _componentSection: ComponentSection;
+    private _component: Component;
+    private _componentNumber: number;
     private _enrolCap: number;
     private _enrolTotal: number;
     private _instructor: String;
 
-    constructor(courseName: String, classNumber: number, componentSection: ComponentSection,
-        enrolCap: number, enrolTotal: number, instructor: String) {
+    constructor();
+    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number,
+        enrolCap: number, enrolTotal: number, instructor: String);
+    constructor(courseName?: String, classNumber?: number, component?: Component, componentNumber?: number,
+        enrolCap?: number, enrolTotal?: number, instructor?: String) {
         this.courseName = courseName;
         this.classNumber = classNumber;
-        this.componentSection = componentSection;
+        this.component = component;
         this.enrolCap = enrolCap;
         this.enrolTotal = enrolTotal;
         this.instructor = instructor;
+        this.componentNumber = componentNumber;
     }
 
     abstract doesOverlap(otherSection: Section): boolean;
@@ -40,8 +45,11 @@ export default abstract class Section {
     get classNumber(): number { return this._classNumber; }
     set classNumber(classNumber: number) { this._classNumber = classNumber; }
 
-    get componentSection(): ComponentSection { return this._componentSection; }
-    set componentSection(componentSection: ComponentSection) { this._componentSection = componentSection; }
+    get component(): Component { return this._component; }
+    set component(component: Component) { this._component = component; }
+
+    get componentNumber(): number { return this._componentNumber; }
+    set componentNumber(componentNumber: number) { this._componentNumber = componentNumber; }
 
     get enrolCap(): number { return this._enrolCap; }
     set enrolCap(enrolCap: number) { this._enrolCap = enrolCap; }

@@ -1,14 +1,14 @@
 import WeeklySection from '../../src/course-structure/WeeklySection';
 import SectionPossibilities from '../../src/course-structure/SectionPossibilities';
-import { ComponentSection } from "../../src/course-structure/ComponentSection";
+import { Component } from "../../src/course-structure/Component";
 import Timeslot from '../../src/course-structure/Timeslot';
 import Time from '../../src/course-structure/Time';
 
 describe('SectionPossibilities class tests', () => {
     let timeslot = new Timeslot(new Time(10, 0), new Time(12, 0));
-    const section1 = new WeeklySection("CS 136", 1, ComponentSection.LEC, [], timeslot, 50, 20, 'Dr. Smith');
-    const section2 = new WeeklySection("CS 136", 2, ComponentSection.LEC, [], timeslot, 30, 25, 'Prof. Johnson');
-    const section3 = new WeeklySection("CS 136", 3, ComponentSection.TUT, [], timeslot, 40, 30, 'Dr. Brown');
+    const section1 = new WeeklySection("CS 136", 1, Component.LEC, 1, [], timeslot, 50, 20, 'Dr. Smith');
+    const section2 = new WeeklySection("CS 136", 2, Component.LEC, 1, [], timeslot, 30, 25, 'Prof. Johnson');
+    const section3 = new WeeklySection("CS 136", 3, Component.TUT, 1, [], timeslot, 40, 30, 'Dr. Brown');
 
     it('constructor should initialize sections with provided sections', () => {
         const sections = [section1, section2];
@@ -29,7 +29,7 @@ describe('SectionPossibilities class tests', () => {
     it('canAddSection should return true if section can be added', () => {
         const sectionPossibilities = new SectionPossibilities([section1]);
 
-        const newSection = new WeeklySection("CS 136", 4, ComponentSection.LEC, [], timeslot, 30, 25, 'Prof. Johnson');
+        const newSection = new WeeklySection("CS 136", 4, Component.LEC, 1, [], timeslot, 30, 25, 'Prof. Johnson');
         const canAdd = sectionPossibilities.canAddSection(newSection);
 
         expect(canAdd).toBe(true);
@@ -38,12 +38,12 @@ describe('SectionPossibilities class tests', () => {
     it('canAddSection should return false if section cannot be added', () => {
         const sectionPossibilities = new SectionPossibilities([section1]);
 
-        let newSection = new WeeklySection("CS 136", 3, ComponentSection.TUT, [], timeslot, 40, 30, 'Dr. Brown');
+        let newSection = new WeeklySection("CS 136", 3, Component.TUT, 1, [], timeslot, 40, 30, 'Dr. Brown');
         let canAdd = sectionPossibilities.canAddSection(newSection);
 
         expect(canAdd).toBe(false);
 
-        newSection = new WeeklySection("CS 136", 3, ComponentSection.LEC, [], new Timeslot(new Time(10, 0), new Time(12, 10)), 40, 30, 'Dr. Brown');
+        newSection = new WeeklySection("CS 136", 3, Component.LEC, 1, [], new Timeslot(new Time(10, 0), new Time(12, 10)), 40, 30, 'Dr. Brown');
         canAdd = sectionPossibilities.canAddSection(newSection);
 
         expect(canAdd).toBe(false);
