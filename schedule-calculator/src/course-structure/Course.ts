@@ -12,8 +12,11 @@ export default class Course {
     private _sections: Section[];
     private _components: Map<Component, Section[]>;
     private _instructors: String[];
+    private _catalogNumberSurfix: String;
 
-    constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[]) {
+    constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[]);
+    constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[], catalogNumberSurfix: String);
+    constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[], catalogNumberSurfix?: String) {
         this._subject = subject;
         this._catalogNumber = catalogNumber;
         this._units = units;
@@ -22,6 +25,7 @@ export default class Course {
         this._components = new Map();
         this.makeComponents();
         this._instructors = [];
+        this._catalogNumberSurfix = catalogNumberSurfix || "";
     }
 
     get components(): Map<Component, Section[]> { return this._components; }
@@ -40,7 +44,7 @@ export default class Course {
     }
 
     get name(): String {
-        return this._subject + " " + this._catalogNumber.toString();
+        return this._subject + " " + this._catalogNumber.toString() + this._catalogNumberSurfix;
     }
 
     get subject(): String { return this._subject; }
@@ -63,4 +67,7 @@ export default class Course {
 
     get instructors(): String[] { return this._instructors; }
     set instructors(instructors: String[]) { this._instructors = instructors; }
+
+    get catalogNumberSurfix(): String { return this._catalogNumberSurfix; }
+    set catalogNumberSurfix(catalogNumberSurfix: String) { this._catalogNumberSurfix = catalogNumberSurfix; }
 }

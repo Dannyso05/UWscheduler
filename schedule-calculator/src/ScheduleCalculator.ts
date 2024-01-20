@@ -12,7 +12,7 @@ export default class ScheduleCalculator {
     private static constraintMap: Map<ConstraintApplied, Constraint[]>;
     private static sectionPossibilitiesArray: SectionPossibilities[][];
 
-    public static calculateSchedules(requiredSections: Section[], courses: Course[], constraints: Constraint[]): String | String[] | never {
+    public static calculateSchedules(requiredSections: Section[], courses: Course[], constraints: Constraint[]): String[] | never {
         this.schedulePossibilitiesList = [];
         this.schedulePossibilities = new SchedulePossibilities();
 

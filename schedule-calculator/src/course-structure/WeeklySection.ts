@@ -16,6 +16,8 @@ export default class WeeklySection extends Section {
 
     constructor();
     constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
+        enrolCap: number, enrolTotal: number);
+    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String);
     constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String, campus: Campus, locationTaught: LocationTaught);

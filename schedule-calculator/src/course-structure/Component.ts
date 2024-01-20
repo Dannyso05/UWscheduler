@@ -1,3 +1,3 @@
 export enum Component {
-    LEC, OLN, ORL, PRA, PRJ, RDG, SEM, STU, TST, TUT, WRK, WSP
+    LEC, OLN, ORL, PRA, PRJ, RDG, SEM, STU, TST, TUT, WRK, WSP, LAB
 }

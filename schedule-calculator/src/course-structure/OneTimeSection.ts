@@ -15,6 +15,8 @@ export default class OneTimeSection extends Section {
 
     constructor();
     constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, date: Date, timeslot: Timeslot,
+        enrolCap: number, enrolTotal: number);
+    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, date: Date, timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String);
     constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, date: Date, timeslot: Timeslot,
         enrolCap: number, enrolTotal: number, instructor: String, campus: Campus, locationTaught: LocationTaught);
