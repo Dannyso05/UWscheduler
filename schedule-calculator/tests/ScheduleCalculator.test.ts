@@ -118,7 +118,6 @@ describe('ScheduleCalculator', () => {
 
         it('test multiple valid solutions (no IsOpenConstraint)', () => {
             const ans = ScheduleCalculator.calculateSchedules([], [tc1, tc2, tc3], []);
-            console.log(ans.length);
             expect(ans.length > 1).toBe(true);
         });
     });
