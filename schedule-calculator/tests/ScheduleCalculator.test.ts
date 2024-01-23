@@ -5,15 +5,13 @@ import { Component } from "../src/course-structure/Component";
 import Course from "../src/course-structure/Course";
 import { Days } from "../src/course-structure/Days";
 import SchedulePossibilities from "../src/course-structure/SchedulePossibilities";
-import Section from "../src/course-structure/Section";
 import SectionPossibilities from "../src/course-structure/SectionPossibilities";
 import Time from "../src/course-structure/Time";
 import Timeslot from "../src/course-structure/Timeslot";
 import WeeklySection from "../src/course-structure/WeeklySection";
 import ScheduleCalculator from "../src/ScheduleCalculator";
 import ScheduleError from "../src/ScheduleError";
-import StringToSections from "./StringToSections";
-import { getCS136, getCS136L, getMATH136, getMATH138, getPHYS122, getPHYS124 } from "./CourseTestLibrary"
+import { getCS136, getCS136L, getMATH136, getMATH138, getPHYS122, getPHYS124, getTestCourse1, getTestCourse2, getTestCourse3 } from "./CourseTestLibrary"
 
 describe('ScheduleCalculator', () => {
     describe('createContraintMap', () => {
@@ -81,12 +79,47 @@ describe('ScheduleCalculator', () => {
             phys122 = getPHYS122();
         });
 
-        it('applies constraints', () => {
+        it('applies is open constraints', () => {
             const constaint = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], [new IsOpenConstraint()]);
             const nonconstaint = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], []);
             
-            console.log(constaint.length);
             expect(constaint.length < nonconstaint.length).toBe(true);
+        });
+
+        it('applies weekly time constraints', () => {
+            const constaint = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], [new WeeklyTimeConstraint(true, new Timeslot(new Time(10, 20), new Time(17, 0)))]);
+            const constaint2 = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], [new WeeklyTimeConstraint(false, new Timeslot(new Time(8, 30), new Time(12, 0)))]);
+
+            expect(constaint).toHaveLength(0);
+            expect(constaint2).toHaveLength(0);
+        });
+    });
+
+    describe('Created data set', () => {
+        let tc1: Course;
+        let tc2: Course;
+        let tc3: Course;
+
+        beforeEach(() => {
+            tc1 = getTestCourse1();
+            tc2 = getTestCourse2();
+            tc3 = getTestCourse3();
+        });
+
+        it('test no valid solution', () => {
+            const ans = ScheduleCalculator.calculateSchedules([], [tc1, tc2, tc3], [new IsOpenConstraint()]);
+            expect(ans).toHaveLength(0);
+        });
+
+        it('test one valid solution', () => {
+            const ans = ScheduleCalculator.calculateSchedules([], [tc1, tc2], [new IsOpenConstraint()]);
+            expect(ans).toHaveLength(1);
+        });
+
+        it('test multiple valid solutions (no IsOpenConstraint)', () => {
+            const ans = ScheduleCalculator.calculateSchedules([], [tc1, tc2, tc3], []);
+            console.log(ans.length);
+            expect(ans.length > 1).toBe(true);
         });
     });
 

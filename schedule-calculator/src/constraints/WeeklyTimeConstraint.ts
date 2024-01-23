@@ -9,8 +9,12 @@ export default class WeeklyTimeConstraint extends Constraint {
     private _mustBeWithin: boolean;
     private _timeslot: Timeslot;
 
-    constructor() {
+    constructor();
+    constructor(mustBeWithin: boolean, timeslot: Timeslot);
+    constructor(mustBeWithin?: boolean, timeslot?: Timeslot) {
         super();
+        this._timeslot = timeslot;
+        this._mustBeWithin = mustBeWithin;
         this._constraintApplied = ConstraintApplied.beforeSectionGrouping;
     }
 

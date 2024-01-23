@@ -60,6 +60,6 @@ export default class Timeslot {
     }
 
     isWithin(otherTimeSlot: Timeslot): boolean {
-        return !otherTimeSlot.startTime.afterThan(this.startTime) && !this.endTime.afterThan(this.endTime);
+        return !otherTimeSlot.startTime.afterThan(this.startTime) && !this.endTime.afterThan(otherTimeSlot.endTime);
     }
 }

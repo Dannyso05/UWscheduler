@@ -171,3 +171,44 @@ export function getPHYS122(): Course {
             .concat(StringToSections.stringToWeeklySections("PHYS 122", phys122Wstr4, [Days.tuesday]))
             .concat(StringToSections.stringToOneTimeSections("PHYS 122", phys122OTstr, new Date("02/27/2024"))));
 }
+
+const tc1WStr =
+    `1	LEC 001	UW U	1	 	201	100	100	0	0	10:00-11:20
+2	LEC 002	UW U	2	 	201	95	95	0	0	11:30-12:50
+3	LEC 003	UW U	3	 	201	95	95	0	0	01:00-02:20
+4	LEC 004	UW U	4	 	201	95	95	0	0	02:30-03:50
+5	LEC 005	UW U	5	 	201	95	95	0	0	03:00-04:20
+6	LEC 006	UW U	6	 	201	95	79	0	0	01:00-02:20
+7	LEC 007	UW U	7	 	201	95	78	0	0	02:30-03:50`;
+
+export function getTestCourse1(): Course {
+    return new Course("TC", 1, 0.5, "Test course 1",
+        StringToSections.stringToWeeklySections("TC 1", tc1WStr, [Days.tuesday, Days.thursday]));
+}
+
+const tc2WStr =
+    `8	LEC 001	UW U	1	 	201	100	100	0	0	10:00-11:20
+9	LEC 002	UW U	2	 	201	95	95	0	0	11:30-12:50
+10	LEC 003	UW U	3	 	201	95	95	0	0	01:00-02:20
+11	LEC 005	UW U	5	 	201	95	95	0	0	10:00-11:20
+12	LEC 006	UW U	6	 	201	95	79	0	0	12:00-01:20
+13	LEC 007	UW U	7	 	201	95	78	0	0	01:30-02:50`;
+
+const tc2WStr2 =
+    `14	TUT 006	UW U	6	 	201	95	95	0	0	12:00-01:20
+15	TUT 007	UW U	7	 	201	95	78	0	0	10:30-12:20
+15	TUT 007	UW U	7	 	201	95	78	0	0	10:00-12:00`;
+
+export function getTestCourse2(): Course {
+    return new Course("TC", 2, 0.5, "Test course 2",
+        StringToSections.stringToWeeklySections("TC 2", tc2WStr, [Days.tuesday, Days.thursday])
+        .concat(StringToSections.stringToWeeklySections("TC 2", tc2WStr2, [Days.tuesday, Days.thursday])));
+}
+
+const tc3WStr =
+    `15	LEC 006	UW U	6	 	201	95	95	0	0	09:30-10:20`;
+
+export function getTestCourse3(): Course {
+    return new Course("TC", 3, 0.5, "Test course 3",
+        StringToSections.stringToWeeklySections("TC 3", tc3WStr, [Days.tuesday, Days.thursday]));
+}
