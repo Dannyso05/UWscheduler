@@ -1,13 +1,16 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "module": "commonJS",
         "moduleResolution": "node",
         "sourceMap": true,
+        "rootDir": "./src",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
         "removeComments": false,
+        "strict": true,
         "noImplicitAny": false,
         "esModuleInterop": true
     },
+    "include": ["src"]
 }
