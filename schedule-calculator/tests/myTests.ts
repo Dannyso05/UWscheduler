@@ -31,7 +31,7 @@ math138 = getMATH138();
 phys124 = getPHYS124();
 phys122 = getPHYS122();
 
-const constaint = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], [new WeeklyTimeConstraint(true, new Timeslot(new Time(10, 20), new Time(17, 0)))]);
+const constaint = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], [new IsOpenConstraint()]);
             
 
 console.log(constaint);
