@@ -62,4 +62,13 @@ export default class Timeslot {
     isWithin(otherTimeSlot: Timeslot): boolean {
         return !otherTimeSlot.startTime.afterThan(this.startTime) && !this.endTime.afterThan(otherTimeSlot.endTime);
     }
+
+    static fromString(timeslotStr: string) {
+        const [startStr, endStr] = timeslotStr.split('-')
+
+        const startTime = Time.fromString(startStr)
+        const endTime = Time.fromString(endStr, startTime.isPM())
+
+        return new Timeslot(startTime, endTime)
+    }
 }

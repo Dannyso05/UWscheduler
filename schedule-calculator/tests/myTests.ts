@@ -37,7 +37,6 @@ import WeeklyTimeConstraint from '../src/constraints/WeeklyTimeConstraint';
 // console.log(constaint);
 
 
-const a = '12jhv3.3'
-const b = +a
-console.log(b)
+const a = 'MTuWTh'
+console.log(a.match(/[A-Z][a-z]*/g))
 

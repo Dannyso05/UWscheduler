@@ -42,4 +42,19 @@ export default class Time {
     copy(): Time {
         return new Time(this.hours, this.minutes);
     }
+
+    isPM(): boolean {
+        return this.hours >= 12
+    }
+
+    static fromString(timeStr: string, mustBePM: boolean = false) {
+        // eslint-disable-next-line prefer-const
+        let [hours, minutes] = timeStr.split(':').map((str) => +str)
+
+        if (hours < 8 || mustBePM) {
+            hours += 12
+        }
+
+        return new Time(hours, minutes)
+    }
 }
