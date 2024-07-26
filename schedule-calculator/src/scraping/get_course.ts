@@ -8,9 +8,57 @@ import WeeklySection from "../course-structure/WeeklySection"
 
 const NUM_OF_ITEMS = 12
 
+function aaa(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function bbb(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function ccc(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function ddd(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function eee(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function fff(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+
+function ggg(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function hhh(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function iii(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function jjj(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function kkk(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
+function lll(dict: { [key: string]: unknown }, node: HTMLTableCellElement) {
+
+}
+
 const IDX_ITEM_FUNC: (((dict: { [key: string]: unknown }, node: HTMLTableCellElement) => void) | undefined)[] = [
-    undefined, undefined, undefined, undefined, undefined, undefined,
-    undefined, undefined, undefined, undefined, undefined, undefined,
+    aaa, bbb, ccc, ddd, eee, fff, ggg, hhh, iii, jjj, kkk, lll
 ]
 
 function getSectionFromHTML(node: HTMLTableRowElement): Section | undefined {
