@@ -8,7 +8,7 @@ import WeeklySection from "../course-structure/WeeklySection"
 
 const NUM_OF_ITEMS = 12
 
-const IDX_ITEM_FUNC: (((dict, node) => void) | undefined)[] = [
+const IDX_ITEM_FUNC: (((dict: { [key: string]: unknown }, node: HTMLTableCellElement) => void) | undefined)[] = [
     undefined, undefined, undefined, undefined, undefined, undefined,
     undefined, undefined, undefined, undefined, undefined, undefined,
 ]
