@@ -17,23 +17,27 @@ import IsOpenConstraint from '../src/constraints/IsOpenConstraint';
 import WeeklyTimeConstraint from '../src/constraints/WeeklyTimeConstraint';
 
 
-let cs136: Course;
-let cs136L: Course;
-let math136: Course;
-let math138: Course;
-let phys124: Course;
-let phys122: Course;
+// let cs136: Course;
+// let cs136L: Course;
+// let math136: Course;
+// let math138: Course;
+// let phys124: Course;
+// let phys122: Course;
 
-cs136 = getCS136();
-cs136L = getCS136L();
-math136 = getMATH136();
-math138 = getMATH138();
-phys124 = getPHYS124();
-phys122 = getPHYS122();
+// cs136 = getCS136();
+// cs136L = getCS136L();
+// math136 = getMATH136();
+// math138 = getMATH138();
+// phys124 = getPHYS124();
+// phys122 = getPHYS122();
 
-const constaint = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], [new IsOpenConstraint()]);
+// const constaint = ScheduleCalculator.calculateSchedules([], [cs136, cs136L, math136, math138, phys124, phys122], [new IsOpenConstraint()]);
             
 
-console.log(constaint);
+// console.log(constaint);
 
+
+const a = '12jhv3.3'
+const b = +a
+console.log(b)
 

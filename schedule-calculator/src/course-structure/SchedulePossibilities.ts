@@ -21,7 +21,7 @@ export default class SchedulePossibilities {
             return false;
         }
 
-        for (var sps of this._sectionPossibilitiesList) {
+        for (const sps of this._sectionPossibilitiesList) {
             if (sps.getSection(0).doesOverlap(sectionPossibilities.getSection(0))) {
                 return false;
             }
@@ -40,8 +40,8 @@ export default class SchedulePossibilities {
     }
 
     addMultipleSectionPossibilities(sections: SectionPossibilities[]): boolean[] {
-        let result: boolean[] = []
-        for (var section of sections) {
+        const result: boolean[] = []
+        for (const section of sections) {
             result.push(this.addSectionPossibilities(section));
         }
         return result;
@@ -63,7 +63,7 @@ export default class SchedulePossibilities {
         return this._sectionPossibilitiesList.length;
     }
 
-    convertToJSON(): String {
+    convertToJSON(): string {
         return JSON.stringify(this);
     }
 }

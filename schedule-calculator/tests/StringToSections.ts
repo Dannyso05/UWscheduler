@@ -8,14 +8,14 @@ import Timeslot from "../src/course-structure/Timeslot";
 import WeeklySection from "../src/course-structure/WeeklySection";
 
 export default class StringToSections {
-    static stringToWeeklySections(courseName: String, str: String, days: Days[]): Section[] {
+    static stringToWeeklySections(courseName: string, str: string, days: Days[]): Section[] {
         // console.log(str)
         const rows = str.replace(/\t/g, ' ').split('\n');
         const sections: WeeklySection[] = rows.map((row) => {
             const split = row.split(' ');
             // console.log(row);
             // console.log(split);
-            var [courseCode, componentStr, sectionNumber, campusStr, loactionTaughtStr, num, assoc, rel1, rel2, num2, enrolCap, enrolTot, waitCap, waitTot, time] = split;
+            let [courseCode, componentStr, sectionNumber, campusStr, loactionTaughtStr, num, assoc, rel1, rel2, num2, enrolCap, enrolTot, waitCap, waitTot, time] = split;
             if (split.length == 14) {
                 [courseCode, componentStr, sectionNumber, campusStr, loactionTaughtStr, num, assoc, rel1, rel2, enrolCap, enrolTot, waitCap, waitTot, time] = split;
             } else if (split.length == 15) {
@@ -28,7 +28,7 @@ export default class StringToSections {
 
             //console.log(componentStr);
 
-            let weeklySection = new WeeklySection(
+            const weeklySection = new WeeklySection(
                 courseName,
                 parseInt(courseCode),
                 this.componentStrToComponent(componentStr),
@@ -47,11 +47,11 @@ export default class StringToSections {
     }
 
     static convert12hTo24h(str12: string): number {
-        let num12 = parseInt(str12);
+        const num12 = parseInt(str12);
         return (1 <= num12 && num12 <= 7) ? num12 + 12 : num12;
     }
 
-    static stringToOneTimeSections(courseName: String, str: String, date: Date): Section[] {
+    static stringToOneTimeSections(courseName: string, str: string, date: Date): Section[] {
         const rows = str.replace(/\t/g, ' ').split('\n');
         const sections: OneTimeSection[] = rows.map((row) => {
             const [courseCode, componentStr, sectionNumber, campusStr, loactionTaughtStr, num, assoc, rel1, rel2, num2, enrolCap, enrolTot, waitCap, waitTot, time] = row.split(' ');
@@ -59,7 +59,7 @@ export default class StringToSections {
 
             // console.log(row.split(' '))
 
-            let section = new OneTimeSection(
+            const section = new OneTimeSection(
                 courseName,
                 parseInt(courseCode),
                 this.componentStrToComponent(componentStr),
@@ -76,7 +76,7 @@ export default class StringToSections {
         return sections;
     }
 
-    static campusStrToCampus(campusStr: String): Campus {
+    static campusStrToCampus(campusStr: string): Campus {
         switch (campusStr) {
             case 'UW':
                 return Campus.UW;
@@ -117,7 +117,7 @@ export default class StringToSections {
         }
     }
 
-    static componentStrToComponent(componentStr: String): Component {
+    static componentStrToComponent(componentStr: string): Component {
         switch (componentStr) {
             case 'LEC':
                 return Component.LEC;

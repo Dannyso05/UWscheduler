@@ -1,0 +1,19 @@
+The University of Waterloo
+Schedule of Classes
+See our online resource to assist you with understanding how to read the Schedule of Classes results table.
+
+Your selection was:
+Level: Undergraduate , Term: 1249 , Subject: AMATH , Course Number: 250
+Subject	Catalog#	Units	Title
+AMATH	250	0.5	Intro Differential Equations
+Notes: LECs 001/002: Choose TUT section for Related 1. LEC 081 does not require a TUT.
+Class	Comp Sec	Camp Loc	Assoc. Class	Rel 1	Rel 2	Enrl Cap	Enrl Tot	Wait Cap	Wait Tot	Time Days/Date	Bldg Room	Instructor
+6164	LEC 001	UW U	1	 	201	120	0	0	0	11:30-12:20MWF
+6564	LEC 002	UW U	2	 	201	120	0	0	0	10:30-11:20MWF
+6802	LEC 081	ONLN ONLINE	81	 	 	60	0	0	0		
+6165	TUT 101	UW U	9999	 	 	120	0	0	0	02:30-03:20M
+6584	TUT 102	UW U	9999	 	 	120	0	0	0	02:30-03:20M
+6585	TST 201	UW U	9999	 	 	240	0	0	0	04:30-06:00F
+11/01-11/01	
+
+Information last updated: 2024/7/10

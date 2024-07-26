@@ -55,7 +55,7 @@ export default class Timeslot {
         return new Timeslot(this.startTime.copy(), this.endTime.copy())
     }
 
-    toString(): String {
+    toString(): string {
         return this.startTime.toString() + ' - ' + this.endTime.toString();
     }
 

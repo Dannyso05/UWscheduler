@@ -7,12 +7,12 @@ import SectionPossibilities from "./course-structure/SectionPossibilities";
 import ScheduleError from "./ScheduleError";
 
 export default class ScheduleCalculator {
-    private static schedulePossibilitiesList: String[];
+    private static schedulePossibilitiesList: string[];
     private static schedulePossibilities: SchedulePossibilities;
     private static constraintMap: Map<ConstraintApplied, Constraint[]>;
     private static sectionPossibilitiesArray: SectionPossibilities[][];
 
-    public static calculateSchedules(requiredSections: Section[], courses: Course[], constraints: Constraint[]): String[] | never {
+    public static calculateSchedules(requiredSections: Section[], courses: Course[], constraints: Constraint[]): string[] | never {
         this.schedulePossibilitiesList = [];
         this.schedulePossibilities = new SchedulePossibilities();
 
@@ -44,10 +44,11 @@ export default class ScheduleCalculator {
     private static createSectionPossibilitiesArray(courses: Course[]) {
         let possibilitiesAdded: SectionPossibilities[];
         this.sectionPossibilitiesArray = [];
-        for (let course of courses) {
-            for (let [component, sections] of Array.from(course.components.entries())) {
+        for (const course of courses) {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            for (const [component, sections] of Array.from(course.components.entries())) {
                 possibilitiesAdded = [];
-                for (let section of sections) {
+                for (const section of sections) {
                     if (this.satisfyConstraints(undefined, section, this.constraintMap.get(ConstraintApplied.beforeSectionGrouping))) {
                         this.addSectionToPossibilitiesAdded(section, possibilitiesAdded);
                     }
@@ -60,7 +61,7 @@ export default class ScheduleCalculator {
 
     private static addSectionToPossibilitiesAdded(section: Section, possibilitiesAdded: SectionPossibilities[]): void {
         let added = false;
-        for (let possibilities of possibilitiesAdded) {
+        for (const possibilities of possibilitiesAdded) {
             if (possibilities.addSection(section)) {
                 added = true;
                 break;
@@ -74,7 +75,7 @@ export default class ScheduleCalculator {
 
     private static satisfyConstraints(currentSchedule: SchedulePossibilities | undefined,
         section: SectionPossibilities | Section, constraints: Constraint[]): boolean {
-        for (let constraint of constraints) {
+        for (const constraint of constraints) {
             if (!constraint.isValid(currentSchedule, section)) {
                 return false;
             }
@@ -85,19 +86,19 @@ export default class ScheduleCalculator {
 
     private static createContraintMap(constraints: Constraint[]): void {
         this.constraintMap = new Map();
-        for (let type in ConstraintApplied) {
+        for (const type in ConstraintApplied) {
             if (!isNaN(Number(type))) {
                 this.constraintMap.set(Number(type), []);
             }
         }
 
-        for (let constraint of constraints) {
+        for (const constraint of constraints) {
             this.constraintMap.get(constraint.constraintApplied).push(constraint);
         }
     }
 
     private static addRequiredSections(requiredSections: Section[]): void {
-        for (let section of requiredSections) {
+        for (const section of requiredSections) {
             if (!this.schedulePossibilities.addSectionPossibilities(new SectionPossibilities([section]))) {
                 throw new ScheduleError("The required section: " + section.toString() + " has an overlap with another required section.");
             }
@@ -105,7 +106,7 @@ export default class ScheduleCalculator {
     }
 
     static getSectionPossibilitiesArray(): SectionPossibilities[][] { return this.sectionPossibilitiesArray; }
-    static getSchedulePossibilitiesList(): String[] { return this.schedulePossibilitiesList; }
+    static getSchedulePossibilitiesList(): string[] { return this.schedulePossibilitiesList; }
     static getSchedulePossibilities(): SchedulePossibilities { return this.schedulePossibilities; }
     static getConstraintMap(): Map<ConstraintApplied, Constraint[]> { return this.constraintMap; }
 }

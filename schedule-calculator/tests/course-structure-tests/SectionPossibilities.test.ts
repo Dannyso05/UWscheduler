@@ -5,7 +5,7 @@ import Timeslot from '../../src/course-structure/Timeslot';
 import Time from '../../src/course-structure/Time';
 
 describe('SectionPossibilities class tests', () => {
-    let timeslot = new Timeslot(new Time(10, 0), new Time(12, 0));
+    const timeslot = new Timeslot(new Time(10, 0), new Time(12, 0));
     const section1 = new WeeklySection("CS 136", 1, Component.LEC, 1, [], timeslot, 50, 20, 'Dr. Smith');
     const section2 = new WeeklySection("CS 136", 2, Component.LEC, 1, [], timeslot, 30, 25, 'Prof. Johnson');
     const section3 = new WeeklySection("CS 136", 3, Component.TUT, 1, [], timeslot, 40, 30, 'Dr. Brown');

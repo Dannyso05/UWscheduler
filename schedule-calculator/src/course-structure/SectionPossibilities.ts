@@ -43,8 +43,8 @@ export default class SectionPossibilities {
     }
 
     addSections(sections: Section[]): boolean[] {
-        let result: boolean[] = []
-        for (var section of sections) {
+        const result: boolean[] = []
+        for (const section of sections) {
             result.push(this.addSection(section));
         }
         return result;

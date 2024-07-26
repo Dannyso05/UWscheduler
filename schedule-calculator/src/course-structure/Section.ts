@@ -1,5 +1,3 @@
-import Timeslot from "./Timeslot";
-import { Days } from "./Days";
 import { Component } from "./Component";
 import { Campus } from "./Campus";
 import { LocationTaught } from "./LocationTaught";
@@ -8,23 +6,18 @@ import { LocationTaught } from "./LocationTaught";
  * Represents a specific section of a class.
  */
 export default abstract class Section {
-    private _courseName: String;
+    private _courseName: string;
     private _classNumber: number;
     private _component: Component;
     private _componentNumber: number;
     private _enrolCap: number;
     private _enrolTotal: number;
-    private _instructor: String;
+    private _instructor: string;
     private _campus: Campus;
     private _locationTaught: LocationTaught;
 
-    constructor();
-    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number,
-        enrolCap: number, enrolTotal: number, instructor: String);
-    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number,
-        enrolCap: number, enrolTotal: number, instructor: String, campus: Campus, locationTaught: LocationTaught);
-    constructor(courseName?: String, classNumber?: number, component?: Component, componentNumber?: number,
-        enrolCap?: number, enrolTotal?: number, instructor?: String, campus?: Campus, locationTaught?: LocationTaught) {
+    constructor(courseName?: string, classNumber?: number, component?: Component, componentNumber?: number,
+        enrolCap?: number, enrolTotal?: number, instructor?: string, campus?: Campus, locationTaught?: LocationTaught) {
         this.courseName = courseName;
         this.classNumber = classNumber;
         this.component = component;
@@ -43,12 +36,12 @@ export default abstract class Section {
         return this.enrolTotal < this.enrolCap;
     }
 
-    toString(): String {
+    toString(): string {
         return this.classNumber.toString();
     }
 
-    get courseName(): String { return this._courseName; }
-    set courseName(courseName: String) { this._courseName = courseName; }
+    get courseName(): string { return this._courseName; }
+    set courseName(courseName: string) { this._courseName = courseName; }
 
     get classNumber(): number { return this._classNumber; }
     set classNumber(classNumber: number) { this._classNumber = classNumber; }
@@ -65,8 +58,8 @@ export default abstract class Section {
     get enrolTotal(): number { return this._enrolTotal; }
     set enrolTotal(enrolTotal: number) { this._enrolTotal = enrolTotal; }
 
-    get instructor(): String { return this._instructor; }
-    set instructor(instructor: String) { this._instructor = instructor; }
+    get instructor(): string { return this._instructor; }
+    set instructor(instructor: string) { this._instructor = instructor; }
 
     get campus(): Campus { return this._campus; }
     set campus(campus: Campus) { this._campus = campus; }

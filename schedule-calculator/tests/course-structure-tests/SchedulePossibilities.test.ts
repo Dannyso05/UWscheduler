@@ -7,10 +7,6 @@ import Timeslot from '../../src/course-structure/Timeslot';
 import { Days } from "../../src/course-structure/Days";
 
 describe('SchedulePossibilities class tests', () => {
-    const section1 = new SectionPossibilities([]);
-    const section2 = new SectionPossibilities([]);
-    const section3 = new SectionPossibilities([]);
-
     it('constructor should initialize sectionPossibilitiesList as an empty array', () => {
         const schedulePossibilities = new SchedulePossibilities();
 

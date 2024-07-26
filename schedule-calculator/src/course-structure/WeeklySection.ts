@@ -15,15 +15,15 @@ export default class WeeklySection extends Section {
     private _timeslot: Timeslot;
 
     constructor();
-    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
+    constructor(courseName: string, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
         enrolCap: number, enrolTotal: number);
-    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
-        enrolCap: number, enrolTotal: number, instructor: String);
-    constructor(courseName: String, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
-        enrolCap: number, enrolTotal: number, instructor: String, campus: Campus, locationTaught: LocationTaught);
+    constructor(courseName: string, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
+        enrolCap: number, enrolTotal: number, instructor: string);
+    constructor(courseName: string, classNumber: number, component: Component, componentNumber: number, days: Days[], timeslot: Timeslot,
+        enrolCap: number, enrolTotal: number, instructor: string, campus: Campus, locationTaught: LocationTaught);
 
-    constructor(courseName?: String, classNumber?: number, component?: Component, componentNumber?: number, days?: Days[],
-        timeslot?: Timeslot, enrolCap?: number, enrolTotal?: number, instructor?: String, campus?: Campus, locationTaught?: LocationTaught) {
+    constructor(courseName?: string, classNumber?: number, component?: Component, componentNumber?: number, days?: Days[],
+        timeslot?: Timeslot, enrolCap?: number, enrolTotal?: number, instructor?: string, campus?: Campus, locationTaught?: LocationTaught) {
         super(courseName, classNumber, component, componentNumber, enrolCap, enrolTotal, instructor, campus, locationTaught);
         this.days = days;
         this.timeslot = timeslot
@@ -64,7 +64,7 @@ export default class WeeklySection extends Section {
     }
 
     doDaysOverlap(otherSection: WeeklySection): boolean {
-        for (var day of this.days) {
+        for (const day of this.days) {
             if (otherSection.days.includes(day)) {
                 return true;
             }

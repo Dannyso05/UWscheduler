@@ -35,7 +35,7 @@ export default class Time {
         return (this.hours > otherTime.hours) || (this.hours == otherTime.hours && this.minutes > otherTime.minutes)
     }
 
-    toString(): String {
+    toString(): string {
         return this.hours.toString() + ":" + this.minutes.toString()
     }
 

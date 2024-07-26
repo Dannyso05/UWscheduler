@@ -5,18 +5,17 @@ import { Component } from "./Component";
  * Represents a full class, with all it's sections.
  */
 export default class Course {
-    private _subject: String;
+    private _subject: string;
     private _catalogNumber: number;
     private _units: number;
-    private _courseTitle: String;
+    private _courseTitle: string;
     private _sections: Section[];
     private _components: Map<Component, Section[]>;
-    private _instructors: String[];
-    private _catalogNumberSurfix: String;
+    private _instructors: string[];
+    private _catalogNumberSurfix: string;
+    private _term: number;
 
-    constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[]);
-    constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[], catalogNumberSurfix: String);
-    constructor(subject: string, catalogNumber: number, units: number, courseTitle: string, sections: Section[], catalogNumberSurfix?: String) {
+    constructor(subject: string, catalogNumber: number, units?: number, courseTitle?: string, sections?: Section[], catalogNumberSurfix?: string, term?: number) {
         this._subject = subject;
         this._catalogNumber = catalogNumber;
         this._units = units;
@@ -26,12 +25,13 @@ export default class Course {
         this.makeComponents();
         this._instructors = [];
         this._catalogNumberSurfix = catalogNumberSurfix || "";
+        this._term = term
     }
 
     get components(): Map<Component, Section[]> { return this._components; }
     makeComponents(): void {
         this._components = new Map();
-        for (var section of this._sections) {
+        for (const section of this._sections) {
             this.pushToComponents(section);
         }
     }
@@ -43,12 +43,12 @@ export default class Course {
         this.components.get(section.component).push(section);
     }
 
-    get name(): String {
+    get name(): string {
         return this._subject + " " + this._catalogNumber.toString() + this._catalogNumberSurfix;
     }
 
-    get subject(): String { return this._subject; }
-    set subject(subject: String) { this._subject = subject; }
+    get subject(): string { return this._subject; }
+    set subject(subject: string) { this._subject = subject; }
 
     get catalogNumber(): number { return this._catalogNumber; }
     set catalogNumber(catalogNumber: number) { this._catalogNumber = catalogNumber; }
@@ -56,8 +56,8 @@ export default class Course {
     get units(): number { return this._units; }
     set units(units: number) { this._units = units; }
 
-    get courseTitle(): String { return this._courseTitle; }
-    set courseTitle(courseTitle: String) { this._courseTitle = courseTitle; }
+    get courseTitle(): string { return this._courseTitle; }
+    set courseTitle(courseTitle: string) { this._courseTitle = courseTitle; }
 
     get sections(): Section[] { return this._sections; }
     set sections(sections: Section[]) {
@@ -65,9 +65,12 @@ export default class Course {
         this.makeComponents();
     }
 
-    get instructors(): String[] { return this._instructors; }
-    set instructors(instructors: String[]) { this._instructors = instructors; }
+    get instructors(): string[] { return this._instructors; }
+    set instructors(instructors: string[]) { this._instructors = instructors; }
 
-    get catalogNumberSurfix(): String { return this._catalogNumberSurfix; }
-    set catalogNumberSurfix(catalogNumberSurfix: String) { this._catalogNumberSurfix = catalogNumberSurfix; }
+    get catalogNumberSurfix(): string { return this._catalogNumberSurfix; }
+    set catalogNumberSurfix(catalogNumberSurfix: string) { this._catalogNumberSurfix = catalogNumberSurfix; }
+
+    get term(): number { return this._term; }
+    set term(term: number) { this._term = term; }
 }

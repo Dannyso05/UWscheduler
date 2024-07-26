@@ -16,13 +16,13 @@ import { getCS136, getCS136L, getMATH136, getMATH138, getPHYS122, getPHYS124, ge
 describe('ScheduleCalculator', () => {
     describe('createContraintMap', () => {
         it('should create constraint map', () => {
-            let constraint1 = new IsOpenConstraint();
-            let constraint2 = new WeeklyTimeConstraint();
-            let constraint3 = new IsOpenConstraint();
+            const constraint1 = new IsOpenConstraint();
+            const constraint2 = new WeeklyTimeConstraint();
+            const constraint3 = new IsOpenConstraint();
             const constraints = [constraint1, constraint2, constraint3];
 
             ScheduleCalculator.calculateSchedules([], [], constraints);
-            let constraintMap = ScheduleCalculator.getConstraintMap();
+            const constraintMap = ScheduleCalculator.getConstraintMap();
 
             expect(constraintMap.has(ConstraintApplied.beforeSectionGrouping)).toBe(true);
             expect(constraintMap.has(ConstraintApplied.afterSectionGrouping)).toBe(true);
@@ -130,12 +130,12 @@ describe('ScheduleCalculator', () => {
 
         const course1 = new Course('Math', 101, 3, 'Introduction to Math', [section1, section2, section3]);
         const course2 = new Course('Physics', 202, 4, 'Advanced Physics', [section4]);
-        let ans = ScheduleCalculator.calculateSchedules([], [course1, course2], []);
+        const ans = ScheduleCalculator.calculateSchedules([], [course1, course2], []);
 
         expect(ans).toHaveLength(1);
 
-        let expected = new SchedulePossibilities();
-        let a = expected.addMultipleSectionPossibilities([new SectionPossibilities([section3]), new SectionPossibilities([section4]), new SectionPossibilities([section1])]);
+        const expected = new SchedulePossibilities();
+        const a = expected.addMultipleSectionPossibilities([new SectionPossibilities([section3]), new SectionPossibilities([section4]), new SectionPossibilities([section1])]);
         expect(ans[0]).toBe(JSON.stringify(expected));
     });
 });

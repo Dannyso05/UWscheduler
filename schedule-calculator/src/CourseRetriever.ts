@@ -11,17 +11,17 @@ import Section from "./course-structure/Section";
 
     constructor() { }
 
-    getCourse(courseName: String): Course | undefined {
+    getCourse(courseName: string): Course | undefined {
         return this.courseBank.getCourse(courseName);
     }
 
-    getSection(courseName: String, classNumber: number): Section | undefined {
-        let sections = this.courseBank.getCourse(courseName)?.sections;
+    getSection(courseName: string, classNumber: number): Section | undefined {
+        const sections = this.courseBank.getCourse(courseName)?.sections;
         if (sections == undefined) {
             return undefined;
         }
 
-        for (var section of sections) {
+        for (const section of sections) {
             if (section.classNumber == classNumber) {
                 return section;
             }

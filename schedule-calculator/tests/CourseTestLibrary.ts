@@ -14,7 +14,7 @@ function getCourse(str: string): Course {
 }
 
 function saveAllCoursesToJSON() {
-    for (var i = 0; i < getCourseFunctions.length; i++) {
+    for (let i = 0; i < getCourseFunctions.length; i++) {
         fs.writeFileSync(prefix + courseNames[i] + suffix, JSON.stringify(getCourseFunctions[i]()));
     }
 }
