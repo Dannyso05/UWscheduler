@@ -1,4 +1,4 @@
-import puppeteer from 'puppeteer'
+import puppeteer, { Browser } from 'puppeteer'
 
 const URL = 'https://classes.uwaterloo.ca/under.html'
 
@@ -11,9 +11,8 @@ export default async function getCourseHTML(
     courseNumber: number,
     catalogNumberSurfix: string = '',
     term: number,
-    headless: boolean = true
+    browser: Browser
 ) {
-    const browser = await puppeteer.launch({ headless: headless })
     const page = await browser.newPage()
 
     await page.goto(URL)
@@ -33,17 +32,27 @@ export default async function getCourseHTML(
 
     const html = await page.content()
 
+    await page.close()
+
+    return html
+}
+
+async function run(headless: boolean = false) {
+    const browser = await puppeteer.launch({ headless: headless })
+
+    const html = await getCourseHTML('CS', 136, 'L', 1251, browser)
+    console.log('HTML:\n', html)
+
     if (!headless) {
         await delay(5000)
     }
 
-    await browser.close()
-    return html
+    browser.close().then(() => {
+        console.log('CONFIRM CLOSED')
+    })
 }
 
-async function run() {
-    const html = await getCourseHTML('CS', 136, 'L', 1251, false)
-    console.log('HTML:\n', html)
-}
-
-if (require.main === module) run()
+if (require.main === module)
+    run().then(() => {
+        console.log('AFTER')
+    })

@@ -1,4 +1,3 @@
-import getCourseHTML from './get_course_html'
 import { JSDOM } from 'jsdom'
 
 import Section from '../course-structure/Section'
@@ -17,6 +16,8 @@ import Timeslot from '../course-structure/Timeslot'
 import { Days, stringToDaysList } from '../course-structure/Days'
 import OneTimeSection from '../course-structure/OneTimeSection'
 import Course from '../course-structure/Course'
+import puppeteer from 'puppeteer'
+import getCourseHTML from './get_course_html'
 
 export default class GetCourseError extends Error {}
 
@@ -170,22 +171,13 @@ function getSectionFromHTML(node: HTMLTableRowElement): Section | undefined {
     return dictToSection(sectionDict)
 }
 
-async function getCourseDetails(
+async function getCourse(
     subject: string,
     catalogNumber: number,
     catalogNumberSurfix: string,
     term: number,
-    html?: string
+    html: string
 ): Promise<Course> {
-    if (!html) {
-        html = await getCourseHTML(
-            subject,
-            catalogNumber,
-            catalogNumberSurfix,
-            term
-        )
-    }
-
     const dom = new JSDOM(html)
     const doc = dom.window.document
 
@@ -196,7 +188,7 @@ async function getCourseDetails(
             .querySelectorAll('tr')[1]
             .querySelectorAll('td')
         const units = +infoNode[2].textContent
-        const courseTitle = infoNode[3].textContent
+        const courseTitle = infoNode[3].textContent.trimEnd()
 
         const rows = doc
             .querySelector('table')
@@ -213,10 +205,6 @@ async function getCourseDetails(
             }
         })
 
-        //console.log('sections: ', sections)
-
-        // create full course
-
         const course = new Course(
             subject,
             catalogNumber,
@@ -227,13 +215,72 @@ async function getCourseDetails(
             term
         )
 
-        console.log('course: ', course)
         return course
     } catch (e) {
         throw new GetCourseError(
-            `Error getting course. Check if this course exists.\nMessage: ${e.message}`
+            `Error getting course ${subject} ${catalogNumber}${catalogNumberSurfix} in term ${term}. Check if this course exists.\nMessage: ${e.message}`
         )
     }
 }
 
-getCourseDetails('CS', 136, 'L', 1249)
+function courseNameToDetails(courseName: string) {
+    const [subject, numAndSurfix] = courseName.split(' ')
+
+    return {
+        subject: subject,
+        catalogNumber: +numAndSurfix.replace(/[a-zA-Z]/g, ''),
+        catalogNumberSurfix: numAndSurfix.replace(/[\d:-]/g, ''),
+    }
+}
+
+export async function getCourses(courseInfos: { courseName: string; term: number }[]) {
+    const browser = await puppeteer.launch({headless: false})
+
+    const courses: Course[] = []
+    const promises: Promise<void>[] = []
+
+    for (const courseInfo of courseInfos) {
+        console.log('courseInfo: ', courseInfo)
+        const { subject, catalogNumber, catalogNumberSurfix } =
+            courseNameToDetails(courseInfo.courseName)
+
+        const promise = getCourseHTML(
+            subject,
+            catalogNumber,
+            catalogNumberSurfix,
+            courseInfo.term,
+            browser
+        ).then((html: string) => {
+            getCourse(
+                subject,
+                catalogNumber,
+                catalogNumberSurfix,
+                courseInfo.term,
+                html
+            ).then((course: Course) => {
+                courses.push(course)
+            })
+        })
+
+        promises.push(promise)
+    }
+
+    console.log('Waiting...')
+    await Promise.all(promises)
+
+    await browser.close()
+    console.log('CONFIRM BROWSER CLOSE')
+
+    return courses
+}
+
+function run() {
+    getCourses([
+        { courseName: 'CS 136L', term: 1249 },
+        { courseName: 'CS 135', term: 1249 },
+        { courseName: 'MATH 135', term: 1249 },
+        { courseName: 'MATH 136', term: 1249 },
+    ]).then((courses) => console.log('courses:', courses))
+}
+
+if (require.main === module) run()
