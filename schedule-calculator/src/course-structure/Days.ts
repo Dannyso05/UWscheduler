@@ -1,9 +1,17 @@
 export enum Days {
-    sunday, monday, tuesday, wednesday, thursday, friday, saturday
+    sunday,
+    monday,
+    tuesday,
+    wednesday,
+    thursday,
+    friday,
+    saturday,
 }
 
 export function stringToDaysList(daysStr: string) {
-    return (daysStr.match(/[A-Z][a-z]*/g) || []).map((dayStr) => stringToDay(dayStr))
+    return (daysStr.match(/[A-Z][a-z]*/g) || []).map((dayStr) =>
+        stringToDay(dayStr)
+    )
 }
 
 function stringToDay(dayStr) {

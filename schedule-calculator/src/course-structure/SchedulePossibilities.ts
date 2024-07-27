@@ -1,69 +1,83 @@
-import SectionPossibilities from "./SectionPossibilities";
-
+import SectionPossibilities from './SectionPossibilities'
 
 export default class SchedulePossibilities {
     // All SectionPossibilities have a length of at least 1.
-    private _sectionPossibilitiesList: SectionPossibilities[];
+    private _sectionPossibilitiesList: SectionPossibilities[]
 
-    constructor();
-    constructor(sectionPossibilitiesList: SectionPossibilities[]);
+    constructor()
+    constructor(sectionPossibilitiesList: SectionPossibilities[])
     constructor(sectionPossibilitiesList?: SectionPossibilities[]) {
-        this._sectionPossibilitiesList = [];
+        this._sectionPossibilitiesList = []
         if (sectionPossibilitiesList != undefined) {
-            this.addMultipleSectionPossibilities(sectionPossibilitiesList);
+            this.addMultipleSectionPossibilities(sectionPossibilitiesList)
         }
     }
 
-    private getSectionPossibilitiesList(): SectionPossibilities[] { return this._sectionPossibilitiesList; }
+    private getSectionPossibilitiesList(): SectionPossibilities[] {
+        return this._sectionPossibilitiesList
+    }
 
-    canAddSectionPossibilities(sectionPossibilities: SectionPossibilities): boolean {
+    canAddSectionPossibilities(
+        sectionPossibilities: SectionPossibilities
+    ): boolean {
         if (sectionPossibilities.length == 0) {
-            return false;
+            return false
         }
 
         for (const sps of this._sectionPossibilitiesList) {
-            if (sps.getSection(0).doesOverlap(sectionPossibilities.getSection(0))) {
-                return false;
+            if (
+                sps
+                    .getSection(0)
+                    .doesOverlap(sectionPossibilities.getSection(0))
+            ) {
+                return false
             }
         }
 
-        return true;
+        return true
     }
 
-    addSectionPossibilities(sectionPossibilities: SectionPossibilities): boolean {
+    addSectionPossibilities(
+        sectionPossibilities: SectionPossibilities
+    ): boolean {
         if (this.canAddSectionPossibilities(sectionPossibilities)) {
-            this._sectionPossibilitiesList.push(sectionPossibilities);
-            return true;
+            this._sectionPossibilitiesList.push(sectionPossibilities)
+            return true
         }
 
-        return false;
+        return false
     }
 
-    addMultipleSectionPossibilities(sections: SectionPossibilities[]): boolean[] {
+    addMultipleSectionPossibilities(
+        sections: SectionPossibilities[]
+    ): boolean[] {
         const result: boolean[] = []
         for (const section of sections) {
-            result.push(this.addSectionPossibilities(section));
+            result.push(this.addSectionPossibilities(section))
         }
-        return result;
+        return result
     }
 
     getSectionPossibilities(index: number): SectionPossibilities {
-        return this._sectionPossibilitiesList[index];
+        return this._sectionPossibilitiesList[index]
     }
 
     removeSectionPossibilities(index: number): void {
-        this._sectionPossibilitiesList.splice(index, 1);
+        this._sectionPossibilitiesList.splice(index, 1)
     }
 
     removeLastSectionPossibilities(): void {
-        this._sectionPossibilitiesList.splice(this._sectionPossibilitiesList.length-1, 1);
+        this._sectionPossibilitiesList.splice(
+            this._sectionPossibilitiesList.length - 1,
+            1
+        )
     }
 
     get length(): number {
-        return this._sectionPossibilitiesList.length;
+        return this._sectionPossibilitiesList.length
     }
 
     convertToJSON(): string {
-        return JSON.stringify(this);
+        return JSON.stringify(this)
     }
 }

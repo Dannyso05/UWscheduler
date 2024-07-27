@@ -1,3 +1,5 @@
 export enum ConstraintApplied {
-    beforeSectionGrouping, afterSectionGrouping, duringCalculation
+    beforeSectionGrouping,
+    afterSectionGrouping,
+    duringCalculation,
 }

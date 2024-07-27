@@ -1,37 +1,49 @@
 export enum Component {
-    LEC, OLN, ORL, PRA, PRJ, RDG, SEM, STU, TST, TUT, WRK, WSP, LAB
+    LEC,
+    OLN,
+    ORL,
+    PRA,
+    PRJ,
+    RDG,
+    SEM,
+    STU,
+    TST,
+    TUT,
+    WRK,
+    WSP,
+    LAB,
 }
 
 export function stringToComponent(componentStr: string): Component {
     switch (componentStr) {
         case 'LEC':
-            return Component.LEC;
+            return Component.LEC
         case 'OLN':
-            return Component.OLN;
+            return Component.OLN
         case 'ORL':
-            return Component.ORL;
+            return Component.ORL
         case 'PRA':
-            return Component.PRA;
+            return Component.PRA
         case 'PRJ':
-            return Component.PRJ;
+            return Component.PRJ
         case 'RDG':
-            return Component.RDG;
+            return Component.RDG
         case 'SEM':
-            return Component.SEM;
+            return Component.SEM
         case 'STU':
-            return Component.STU;
+            return Component.STU
         case 'TST':
-            return Component.TST;
+            return Component.TST
         case 'TUT':
-            return Component.TUT;
+            return Component.TUT
         case 'WRK':
-            return Component.WRK;
+            return Component.WRK
         case 'WSP':
-            return Component.WSP;
+            return Component.WSP
         case 'LAB':
-            return Component.LAB;
+            return Component.LAB
         default:
-            return null;
+            return null
     }
 }
 

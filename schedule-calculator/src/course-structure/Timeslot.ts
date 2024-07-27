@@ -1,30 +1,31 @@
-import Time from "./Time"
-import TimeError from "./TimeError";
-
+import Time from './Time'
+import TimeError from './TimeError'
 
 /**
  * Represents a timeslot for a class.
  * startTime and endTime are of type Time.
  */
 export default class Timeslot {
-    private _startTime: Time;
-    private _endTime: Time;
+    private _startTime: Time
+    private _endTime: Time
 
     constructor(startTime: Time, endTime: Time) {
         if (startTime.afterThan(endTime)) {
-            throw new TimeError("Start time must be before or equal to end time.");
+            throw new TimeError(
+                'Start time must be before or equal to end time.'
+            )
         }
 
-        this._startTime = startTime;
-        this._endTime = endTime;
+        this._startTime = startTime
+        this._endTime = endTime
     }
 
     get startTime(): Time {
-        return this._startTime;
+        return this._startTime
     }
 
     get endTime(): Time {
-        return this._endTime;
+        return this._endTime
     }
 
     /**
@@ -32,19 +33,26 @@ export default class Timeslot {
      * @param {Timeslot} otherTimeSlot
      * @returns Boolean
      */
-    equals(otherTimeSlot: Timeslot): boolean{
-        return this.startTime.equals(otherTimeSlot.startTime) && this.endTime.equals(otherTimeSlot.endTime);
+    equals(otherTimeSlot: Timeslot): boolean {
+        return (
+            this.startTime.equals(otherTimeSlot.startTime) &&
+            this.endTime.equals(otherTimeSlot.endTime)
+        )
     }
 
     /**
      * Returns true if this and otherTimeSlot overlap.
-     * @param {Timeslot} otherTimeSlot 
+     * @param {Timeslot} otherTimeSlot
      * @returns Boolean
      */
     doesOverlap(otherTimeSlot: Timeslot): boolean {
-        return this.startTime.equals(otherTimeSlot.startTime) ||
-                (this.startTime.afterThan(otherTimeSlot.startTime) && otherTimeSlot.endTime.afterThan(this.startTime)) || 
-                (otherTimeSlot.startTime.afterThan(this.startTime) && this.endTime.afterThan(otherTimeSlot.startTime));
+        return (
+            this.startTime.equals(otherTimeSlot.startTime) ||
+            (this.startTime.afterThan(otherTimeSlot.startTime) &&
+                otherTimeSlot.endTime.afterThan(this.startTime)) ||
+            (otherTimeSlot.startTime.afterThan(this.startTime) &&
+                this.endTime.afterThan(otherTimeSlot.startTime))
+        )
     }
 
     /**
@@ -56,11 +64,14 @@ export default class Timeslot {
     }
 
     toString(): string {
-        return this.startTime.toString() + ' - ' + this.endTime.toString();
+        return this.startTime.toString() + ' - ' + this.endTime.toString()
     }
 
     isWithin(otherTimeSlot: Timeslot): boolean {
-        return !otherTimeSlot.startTime.afterThan(this.startTime) && !this.endTime.afterThan(otherTimeSlot.endTime);
+        return (
+            !otherTimeSlot.startTime.afterThan(this.startTime) &&
+            !this.endTime.afterThan(otherTimeSlot.endTime)
+        )
     }
 
     static fromString(timeslotStr: string) {

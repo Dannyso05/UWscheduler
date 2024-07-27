@@ -1,5 +1,12 @@
 export enum LocationTaught {
-    U, G, J, L, R, UTD, ONLINE, STRATFORD
+    U,
+    G,
+    J,
+    L,
+    R,
+    UTD,
+    ONLINE,
+    STRATFORD,
 }
 
 export function stringToLocationTaught(locationStr: string) {
