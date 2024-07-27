@@ -233,8 +233,10 @@ function courseNameToDetails(courseName: string) {
     }
 }
 
-export async function getCourses(courseInfos: { courseName: string; term: number }[]) {
-    const browser = await puppeteer.launch({headless: false})
+export async function getCourses(
+    courseInfos: { courseName: string; term: number }[]
+) {
+    const browser = await puppeteer.launch({ headless: false })
 
     const courses: Course[] = []
     const promises: Promise<void>[] = []
