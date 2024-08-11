@@ -1,169 +1,136 @@
 import Constraint from './constraints/Constraint'
 import { ConstraintApplied } from './constraints/ConstraintApplied'
 import Course from './course-structure/Course'
-import SchedulePossibilities from './course-structure/SchedulePossibilities'
+import SchedulePossibilities, {
+    SchedulePossibilitiesDict,
+} from './course-structure/SchedulePossibilities'
 import Section from './course-structure/Section'
 import SectionPossibilities from './course-structure/SectionPossibilities'
 import ScheduleError from './ScheduleError'
 
-export default class ScheduleCalculator {
-    private static schedulePossibilitiesList: string[]
-    private static schedulePossibilities: SchedulePossibilities
-    private static constraintMap: Map<ConstraintApplied, Constraint[]>
-    private static sectionPossibilitiesArray: SectionPossibilities[][]
+export type ConstraintMap = Map<ConstraintApplied, Constraint[]>
 
-    public static calculateSchedules(
-        requiredSections: Section[],
-        courses: Course[],
-        constraints: Constraint[]
-    ): string[] | never {
-        this.schedulePossibilitiesList = []
-        this.schedulePossibilities = new SchedulePossibilities()
+export default function calculateSchedules(
+    requiredSections: Section[],
+    courses: Course[],
+    constraints: Constraint[]
+): SchedulePossibilitiesDict[] {
+    const schedulePossibilities = new SchedulePossibilities()
 
-        ScheduleCalculator.addRequiredSections(requiredSections)
-        ScheduleCalculator.createContraintMap(constraints)
-        ScheduleCalculator.createSectionPossibilitiesArray(courses)
+    addRequiredSections(schedulePossibilities, requiredSections)
+    const constraintMap = createContraintMap(constraints)
+    const sectionPossibilitiesArray = createSectionPossibilitiesArray(
+        constraintMap,
+        courses
+    )
 
-        ScheduleCalculator.createAllPossibleSchedules(0)
+    const schedulePossibilitiesList: SchedulePossibilitiesDict[] = []
+    createAllPossibleSchedules(
+        schedulePossibilities,
+        schedulePossibilitiesList,
+        sectionPossibilitiesArray,
+        constraintMap,
+        0
+    )
 
-        return this.schedulePossibilitiesList
+    return schedulePossibilitiesList
+}
+
+function createAllPossibleSchedules(
+    schedulePossibilities: SchedulePossibilities,
+    schedulePossibilitiesList: SchedulePossibilitiesDict[],
+    sectionPossibilitiesArray: SectionPossibilities[][],
+    constraintMap: ConstraintMap,
+    spaCurrentIndex: number
+): void {
+    if (spaCurrentIndex >= sectionPossibilitiesArray.length) {
+        schedulePossibilitiesList.push(schedulePossibilities.toDict())
+        return
     }
 
-    private static createAllPossibleSchedules(spaCurrentIndex: number): void {
-        if (spaCurrentIndex >= this.sectionPossibilitiesArray.length) {
-            this.schedulePossibilitiesList.push(
-                this.schedulePossibilities.convertToJSON()
+    for (const sectionPossibilities of sectionPossibilitiesArray[
+        spaCurrentIndex
+    ]) {
+        if (
+            satisfyConstraints(
+                sectionPossibilities,
+                constraintMap.get(ConstraintApplied.duringCalculation),
+                schedulePossibilities
+            ) &&
+            schedulePossibilities.addSectionPossibilities(sectionPossibilities)
+        ) {
+            createAllPossibleSchedules(
+                schedulePossibilities,
+                schedulePossibilitiesList,
+                sectionPossibilitiesArray,
+                constraintMap,
+                spaCurrentIndex + 1
             )
-            return
-        }
-
-        for (const sectionPossibilities of this.sectionPossibilitiesArray[
-            spaCurrentIndex
-        ]) {
-            if (
-                this.satisfyConstraints(
-                    this.schedulePossibilities,
-                    sectionPossibilities,
-                    this.constraintMap.get(ConstraintApplied.duringCalculation)
-                )
-            ) {
-                if (
-                    this.schedulePossibilities.addSectionPossibilities(
-                        sectionPossibilities
-                    )
-                ) {
-                    this.createAllPossibleSchedules(spaCurrentIndex + 1)
-                    this.schedulePossibilities.removeLastSectionPossibilities()
-                }
-            }
+            schedulePossibilities.removeLastSectionPossibilities()
         }
     }
+}
 
-    private static createSectionPossibilitiesArray(courses: Course[]) {
-        let possibilitiesAdded: SectionPossibilities[]
-        this.sectionPossibilitiesArray = []
-        for (const course of courses) {
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            for (const [component, sections] of Array.from(
-                course.components.entries()
-            )) {
-                possibilitiesAdded = []
-                for (const section of sections) {
-                    if (
-                        this.satisfyConstraints(
-                            undefined,
-                            section,
-                            this.constraintMap.get(
-                                ConstraintApplied.beforeSectionGrouping
-                            )
-                        )
-                    ) {
-                        this.addSectionToPossibilitiesAdded(
-                            section,
-                            possibilitiesAdded
-                        )
-                    }
-                }
-                this.sectionPossibilitiesArray.push(possibilitiesAdded)
-            }
-        }
-        this.sectionPossibilitiesArray.sort(
-            (sp1, sp2) => sp1.length - sp2.length
+function createSectionPossibilitiesArray(
+    constraintMap: ConstraintMap,
+    courses: Course[]
+) {
+    let sectionPossibilitiesArray: SectionPossibilities[][] = []
+    for (const course of courses) {
+        sectionPossibilitiesArray = sectionPossibilitiesArray.concat(
+            course.getSectionPossibilitiesArray(constraintMap)
         )
     }
 
-    private static addSectionToPossibilitiesAdded(
-        section: Section,
-        possibilitiesAdded: SectionPossibilities[]
-    ): void {
-        let added = false
-        for (const possibilities of possibilitiesAdded) {
-            if (possibilities.addSection(section)) {
-                added = true
-                break
-            }
-        }
+    sectionPossibilitiesArray.sort((sp1, sp2) => sp1.length - sp2.length)
 
-        if (!added) {
-            possibilitiesAdded.push(new SectionPossibilities([section]))
-        }
-    }
+    return sectionPossibilitiesArray
+}
 
-    private static satisfyConstraints(
-        currentSchedule: SchedulePossibilities | undefined,
-        section: SectionPossibilities | Section,
-        constraints: Constraint[]
-    ): boolean {
-        for (const constraint of constraints) {
-            if (!constraint.isValid(currentSchedule, section)) {
-                return false
-            }
-        }
-
-        return true
-    }
-
-    private static createContraintMap(constraints: Constraint[]): void {
-        this.constraintMap = new Map()
-        for (const type in ConstraintApplied) {
-            if (!isNaN(Number(type))) {
-                this.constraintMap.set(Number(type), [])
-            }
-        }
-
-        for (const constraint of constraints) {
-            this.constraintMap
-                .get(constraint.constraintApplied)
-                .push(constraint)
+export function satisfyConstraints(
+    section: SectionPossibilities | Section,
+    constraints: Constraint[],
+    currentSchedule?: SchedulePossibilities
+): boolean {
+    for (const constraint of constraints) {
+        if (!constraint.isValid(currentSchedule, section)) {
+            return false
         }
     }
 
-    private static addRequiredSections(requiredSections: Section[]): void {
-        for (const section of requiredSections) {
-            if (
-                !this.schedulePossibilities.addSectionPossibilities(
-                    new SectionPossibilities([section])
-                )
-            ) {
-                throw new ScheduleError(
-                    'The required section: ' +
-                        section.toString() +
-                        ' has an overlap with another required section.'
-                )
-            }
+    return true
+}
+
+export function createContraintMap(constraints: Constraint[]): ConstraintMap {
+    const constraintMap = new Map()
+    for (const type in ConstraintApplied) {
+        if (!isNaN(Number(type))) {
+            constraintMap.set(Number(type), [])
         }
     }
 
-    static getSectionPossibilitiesArray(): SectionPossibilities[][] {
-        return this.sectionPossibilitiesArray
+    for (const constraint of constraints) {
+        constraintMap.get(constraint.constraintApplied).push(constraint)
     }
-    static getSchedulePossibilitiesList(): string[] {
-        return this.schedulePossibilitiesList
-    }
-    static getSchedulePossibilities(): SchedulePossibilities {
-        return this.schedulePossibilities
-    }
-    static getConstraintMap(): Map<ConstraintApplied, Constraint[]> {
-        return this.constraintMap
+
+    return constraintMap
+}
+
+function addRequiredSections(
+    schedulePossibilities: SchedulePossibilities,
+    requiredSections: Section[]
+): void {
+    for (const section of requiredSections) {
+        if (
+            !schedulePossibilities.addSectionPossibilities(
+                new SectionPossibilities([section])
+            )
+        ) {
+            throw new ScheduleError(
+                'The required section: ' +
+                    section.toString() +
+                    ' has an overlap with another required section.'
+            )
+        }
     }
 }

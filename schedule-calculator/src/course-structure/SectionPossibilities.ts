@@ -56,4 +56,10 @@ export default class SectionPossibilities {
     get length(): number {
         return this._sections.length
     }
+
+    toDict() {
+        return {
+            sections: this._sections.map((section) => section.toDict()),
+        }
+    }
 }

@@ -1,5 +1,8 @@
 import Section from './Section'
 import { Component } from './Component'
+import { ConstraintMap, satisfyConstraints } from '../ScheduleCalculator'
+import { ConstraintApplied } from '../constraints/ConstraintApplied'
+import SectionPossibilities from './SectionPossibilities'
 
 /**
  * Represents a full class, with all it's sections.
@@ -117,5 +120,44 @@ export default class Course {
     }
     set term(term: number) {
         this._term = term
+    }
+
+    getSectionPossibilitiesArray(
+        constraintMap: ConstraintMap
+    ): SectionPossibilities[][] {
+        const sectionPossibilitiesArray: SectionPossibilities[][] = []
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        for (const [component, sections] of Array.from(
+            this.components.entries()
+        )) {
+            const possibilitiesAdded: SectionPossibilities[] = []
+            for (const section of sections) {
+                if (
+                    satisfyConstraints(
+                        section,
+                        constraintMap.get(
+                            ConstraintApplied.beforeSectionGrouping
+                        )
+                    )
+                ) {
+                    let added = false
+                    for (const possibilities of possibilitiesAdded) {
+                        if (possibilities.addSection(section)) {
+                            added = true
+                            break
+                        }
+                    }
+
+                    if (!added) {
+                        possibilitiesAdded.push(
+                            new SectionPossibilities([section])
+                        )
+                    }
+                }
+            }
+            sectionPossibilitiesArray.push(possibilitiesAdded)
+        }
+
+        return sectionPossibilitiesArray
     }
 }

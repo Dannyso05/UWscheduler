@@ -1,5 +1,10 @@
 import SectionPossibilities from './SectionPossibilities'
 
+export type SchedulePossibilitiesDict = Record<
+    string,
+    Array<Record<string, unknown>>
+>
+
 export default class SchedulePossibilities {
     // All SectionPossibilities have a length of at least 1.
     private _sectionPossibilitiesList: SectionPossibilities[]
@@ -77,7 +82,11 @@ export default class SchedulePossibilities {
         return this._sectionPossibilitiesList.length
     }
 
-    convertToJSON(): string {
-        return JSON.stringify(this)
+    toDict(): SchedulePossibilitiesDict {
+        return {
+            sectionPossibilitiesList: this._sectionPossibilitiesList.map(
+                (sectionPossibilities) => sectionPossibilities.toDict()
+            ),
+        }
     }
 }

@@ -5,6 +5,8 @@ import { Component } from '../../src/course-structure/Component'
 import { Days } from '../../src/course-structure/Days'
 import Timeslot from '../../src/course-structure/Timeslot'
 import Time from '../../src/course-structure/Time'
+import { ConstraintMap } from '../../src/ScheduleCalculator'
+import { ConstraintApplied } from '../../src/constraints/ConstraintApplied'
 
 describe('Course class tests', () => {
     let course: Course
@@ -153,5 +155,57 @@ describe('Course class tests', () => {
             'Prof. Johnson'
         )
         expect(section1.doesOverlap(section2)).toBe(false)
+    })
+
+    describe('getSectionPossibilitiesArray', () => {
+        it('creates a valid section possibilities array, in order', () => {
+            const section1 = new WeeklySection(
+                'CS 136',
+                1,
+                Component.LEC,
+                1,
+                [Days.monday, Days.tuesday],
+                new Timeslot(new Time(9, 0), new Time(10, 0)),
+                50,
+                20,
+                'Dr. Smith'
+            )
+            const section2 = new WeeklySection(
+                'CS 136',
+                2,
+                Component.LEC,
+                1,
+                [Days.monday, Days.tuesday],
+                new Timeslot(new Time(10, 0), new Time(12, 0)),
+                30,
+                25,
+                'Prof. Johnson'
+            )
+            const section3 = new WeeklySection(
+                'CS 136',
+                3,
+                Component.TUT,
+                1,
+                [Days.monday, Days.tuesday],
+                new Timeslot(new Time(10, 0), new Time(16, 0)),
+                40,
+                30,
+                'Dr. Brown'
+            )
+
+            const course = new Course('Math', 101, 3, 'Introduction to Math', [
+                section1,
+                section2,
+                section3,
+            ])
+
+            const constraintMap: ConstraintMap = new Map()
+            constraintMap.set(ConstraintApplied.beforeSectionGrouping, [])
+            const spa = course.getSectionPossibilitiesArray(constraintMap)
+
+            expect(spa).toHaveLength(2)
+            expect(spa[0]).toHaveLength(2)
+            expect(spa[1]).toHaveLength(1)
+        })
     })
 })

@@ -240,7 +240,6 @@ export async function getCourses(
 
     let error = null
     for (const courseInfo of courseInfos) {
-        console.log('courseInfo: ', courseInfo)
         const { subject, catalogNumber, catalogNumberSurfix } =
             courseNameToDetails(courseInfo.courseName)
 
@@ -251,7 +250,6 @@ export async function getCourses(
             courseInfo.term,
             browser
         ).then((html: string) => {
-            console.log(`${courseInfo.courseName} html:\n`, html)
             getCourse(
                 subject,
                 catalogNumber,
@@ -268,7 +266,6 @@ export async function getCourses(
         promises.push(promise)
     }
 
-    console.log('Waiting...')
     await Promise.all(promises)
 
     await browser.close()

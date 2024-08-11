@@ -9,7 +9,9 @@ import SectionPossibilities from '../src/course-structure/SectionPossibilities'
 import Time from '../src/course-structure/Time'
 import Timeslot from '../src/course-structure/Timeslot'
 import WeeklySection from '../src/course-structure/WeeklySection'
-import ScheduleCalculator from '../src/ScheduleCalculator'
+import calculateSchedules, {
+    createContraintMap,
+} from '../src/ScheduleCalculator'
 import ScheduleError from '../src/ScheduleError'
 import {
     getCS136,
@@ -31,8 +33,7 @@ describe('ScheduleCalculator', () => {
             const constraint3 = new IsOpenConstraint()
             const constraints = [constraint1, constraint2, constraint3]
 
-            ScheduleCalculator.calculateSchedules([], [], constraints)
-            const constraintMap = ScheduleCalculator.getConstraintMap()
+            const constraintMap = createContraintMap(constraints)
 
             expect(
                 constraintMap.has(ConstraintApplied.beforeSectionGrouping)
@@ -92,78 +93,8 @@ describe('ScheduleCalculator', () => {
         )
 
         expect(() => {
-            ScheduleCalculator.calculateSchedules(
-                [section1, section2, section3],
-                [],
-                []
-            )
+            calculateSchedules([section1, section2, section3], [], [])
         }).toThrow(ScheduleError)
-    })
-
-    describe('createSectionPossibilitiesArray', () => {
-        it('creates a valid section possibilities array, in order', () => {
-            const section1 = new WeeklySection(
-                'CS 136',
-                1,
-                Component.LEC,
-                1,
-                [Days.monday, Days.tuesday],
-                new Timeslot(new Time(9, 0), new Time(10, 0)),
-                50,
-                20,
-                'Dr. Smith'
-            )
-            const section2 = new WeeklySection(
-                'CS 136',
-                2,
-                Component.LEC,
-                1,
-                [Days.monday, Days.tuesday],
-                new Timeslot(new Time(10, 0), new Time(12, 0)),
-                30,
-                25,
-                'Prof. Johnson'
-            )
-            const section3 = new WeeklySection(
-                'CS 136',
-                3,
-                Component.TUT,
-                1,
-                [Days.monday, Days.tuesday],
-                new Timeslot(new Time(10, 0), new Time(16, 0)),
-                40,
-                30,
-                'Dr. Brown'
-            )
-            const section4 = new WeeklySection(
-                'CS 136',
-                1,
-                Component.LEC,
-                1,
-                [Days.monday, Days.wednesday, Days.friday],
-                new Timeslot(new Time(10, 0), new Time(12, 0)),
-                30,
-                0,
-                'Deniz'
-            )
-
-            const course1 = new Course('Math', 101, 3, 'Introduction to Math', [
-                section1,
-                section2,
-                section3,
-            ])
-            const course2 = new Course('Physics', 202, 4, 'Advanced Physics', [
-                section4,
-            ])
-            ScheduleCalculator.calculateSchedules([], [course1, course2], [])
-
-            const spa = ScheduleCalculator.getSectionPossibilitiesArray()
-
-            expect(spa).toHaveLength(3)
-            expect(spa[0]).toHaveLength(1)
-            expect(spa[1]).toHaveLength(1)
-            expect(spa[2]).toHaveLength(2)
-        })
     })
 
     describe('Real life data tests', () => {
@@ -184,41 +115,29 @@ describe('ScheduleCalculator', () => {
         })
 
         it('applies is open constraints', () => {
-            const constaint = ScheduleCalculator.calculateSchedules(
-                [],
-                [cs136, cs136L, math136, math138, phys124, phys122],
-                [new IsOpenConstraint()]
-            )
-            const nonconstaint = ScheduleCalculator.calculateSchedules(
-                [],
-                [cs136, cs136L, math136, math138, phys124, phys122],
-                []
-            )
+            const courses = [cs136, cs136L, math136, math138, phys124, phys122]
+            const constaint = calculateSchedules([], courses, [
+                new IsOpenConstraint(),
+            ])
+            const nonconstaint = calculateSchedules([], courses, [])
 
             expect(constaint.length < nonconstaint.length).toBe(true)
         })
 
         it('applies weekly time constraints', () => {
-            const constaint = ScheduleCalculator.calculateSchedules(
-                [],
-                [cs136, cs136L, math136, math138, phys124, phys122],
-                [
-                    new WeeklyTimeConstraint(
-                        true,
-                        new Timeslot(new Time(10, 20), new Time(17, 0))
-                    ),
-                ]
-            )
-            const constaint2 = ScheduleCalculator.calculateSchedules(
-                [],
-                [cs136, cs136L, math136, math138, phys124, phys122],
-                [
-                    new WeeklyTimeConstraint(
-                        false,
-                        new Timeslot(new Time(8, 30), new Time(12, 0))
-                    ),
-                ]
-            )
+            const courses = [cs136, cs136L, math136, math138, phys124, phys122]
+            const constaint = calculateSchedules([], courses, [
+                new WeeklyTimeConstraint(
+                    true,
+                    new Timeslot(new Time(10, 20), new Time(17, 0))
+                ),
+            ])
+            const constaint2 = calculateSchedules([], courses, [
+                new WeeklyTimeConstraint(
+                    false,
+                    new Timeslot(new Time(8, 30), new Time(12, 0))
+                ),
+            ])
 
             expect(constaint).toHaveLength(0)
             expect(constaint2).toHaveLength(0)
@@ -237,7 +156,7 @@ describe('ScheduleCalculator', () => {
         })
 
         it('test no valid solution', () => {
-            const ans = ScheduleCalculator.calculateSchedules(
+            const ans = calculateSchedules(
                 [],
                 [tc1, tc2, tc3],
                 [new IsOpenConstraint()]
@@ -246,7 +165,7 @@ describe('ScheduleCalculator', () => {
         })
 
         it('test one valid solution', () => {
-            const ans = ScheduleCalculator.calculateSchedules(
+            const ans = calculateSchedules(
                 [],
                 [tc1, tc2],
                 [new IsOpenConstraint()]
@@ -255,11 +174,7 @@ describe('ScheduleCalculator', () => {
         })
 
         it('test multiple valid solutions (no IsOpenConstraint)', () => {
-            const ans = ScheduleCalculator.calculateSchedules(
-                [],
-                [tc1, tc2, tc3],
-                []
-            )
+            const ans = calculateSchedules([], [tc1, tc2, tc3], [])
             expect(ans.length > 1).toBe(true)
         })
     })
@@ -318,20 +233,15 @@ describe('ScheduleCalculator', () => {
         const course2 = new Course('Physics', 202, 4, 'Advanced Physics', [
             section4,
         ])
-        const ans = ScheduleCalculator.calculateSchedules(
-            [],
-            [course1, course2],
-            []
-        )
-
-        expect(ans).toHaveLength(1)
+        const ans = calculateSchedules([], [course1, course2], [])
 
         const expected = new SchedulePossibilities()
-        const a = expected.addMultipleSectionPossibilities([
+        expected.addMultipleSectionPossibilities([
             new SectionPossibilities([section3]),
             new SectionPossibilities([section4]),
             new SectionPossibilities([section1]),
         ])
-        expect(ans[0]).toBe(JSON.stringify(expected))
+
+        expect(ans).toStrictEqual([expected.toDict()])
     })
 })

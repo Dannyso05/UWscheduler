@@ -111,4 +111,18 @@ export default abstract class Section {
     set locationTaught(locationTaught: LocationTaught) {
         this._locationTaught = locationTaught
     }
+
+    toDict() {
+        return {
+            courseName: this.courseName,
+            classNumber: this.classNumber,
+            component: this.component,
+            componentNumber: this.componentNumber,
+            enrolCap: this.enrolCap,
+            enrolTotal: this.enrolTotal,
+            instructor: this.instructor,
+            campus: this.campus,
+            locationTaught: this.locationTaught,
+        }
+    }
 }
