@@ -164,10 +164,6 @@ function getSectionFromHTML(node: HTMLTableRowElement): Section | undefined {
         }
     }
 
-    // console.log('\nnode: ', node.textContent)
-    // console.log('sectionDict: ', sectionDict)
-    // console.log('section: ', dictToSection(sectionDict))
-
     return dictToSection(sectionDict)
 }
 
@@ -242,6 +238,7 @@ export async function getCourses(
     const courses: Course[] = []
     const promises: Promise<void>[] = []
 
+    let error = null
     for (const courseInfo of courseInfos) {
         console.log('courseInfo: ', courseInfo)
         const { subject, catalogNumber, catalogNumberSurfix } =
@@ -261,9 +258,11 @@ export async function getCourses(
                 catalogNumberSurfix,
                 courseInfo.term,
                 html
-            ).then((course: Course) => {
-                courses.push(course)
-            })
+            )
+                .catch((e) => (error = e))
+                .then((course: Course) => {
+                    courses.push(course)
+                })
         })
 
         promises.push(promise)
@@ -274,6 +273,10 @@ export async function getCourses(
 
     await browser.close()
     console.log('CONFIRM BROWSER CLOSE')
+
+    if (error) {
+        return Promise.reject(error)
+    }
 
     return courses
 }

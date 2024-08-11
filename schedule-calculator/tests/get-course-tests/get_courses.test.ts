@@ -3,7 +3,6 @@ import getCourseHTML from '../../src/get-course/get_course_html'
 import { getCourses } from '../../src/get-course/get_courses'
 import { getCourseHTMLMock } from './course_html_mocks'
 
-// Mock the getCourseHTML function
 jest.mock('../../src/get-course/get_course_html')
 
 const term = 1249
@@ -16,7 +15,7 @@ const mockValidCourses = [
 
 const mockNonExistentCourses = [
     { courseName: 'CS 136L', term: term },
-    { courseName: 'DOESNT EXIST', term: term },
+    { courseName: 'HEHE 123456', term: term },
     { courseName: 'MATH 135', term: term },
     { courseName: 'MATH 136', term: term },
 ]
@@ -38,9 +37,8 @@ describe('getCourses', () => {
     })
 
     it('should fail if a course does not exist', async () => {
-        await getCourses(mockNonExistentCourses)
-        await expect(getCourses(mockNonExistentCourses)).resolves.toThrow("Error getting course DOESNT 0EXIST in term 1249. Check if this course exists.")
+        await expect(getCourses(mockNonExistentCourses)).rejects.toThrow(
+            'Error getting course HEHE 123456 in term 1249. Check if this course exists.'
+        )
     })
-
-    // Add more tests for additional mocks as needed
 })
