@@ -38,7 +38,8 @@ describe('getCourses', () => {
     })
 
     it('should fail if a course does not exist', async () => {
-        expect(async () => await getCourses(mockNonExistentCourses)).toThrow()
+        await getCourses(mockNonExistentCourses)
+        await expect(getCourses(mockNonExistentCourses)).resolves.toThrow("Error getting course DOESNT 0EXIST in term 1249. Check if this course exists.")
     })
 
     // Add more tests for additional mocks as needed
