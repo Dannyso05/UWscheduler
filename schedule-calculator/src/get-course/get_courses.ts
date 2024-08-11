@@ -235,7 +235,7 @@ function courseNameToDetails(courseName: string) {
 
 export async function getCourses(
     courseInfos: { courseName: string; term: number }[],
-    headless: boolean = false
+    headless: boolean = true
 ) {
     const browser = await puppeteer.launch({ headless: headless })
 

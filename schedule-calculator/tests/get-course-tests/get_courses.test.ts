@@ -1,6 +1,6 @@
+import Course from '../../src/course-structure/Course'
 import getCourseHTML from '../../src/get-course/get_course_html'
 import { getCourses } from '../../src/get-course/get_courses'
-import * as mocks from './course_html_mocks'
 import { getCourseHTMLMock } from './course_html_mocks'
 
 // Mock the getCourseHTML function
@@ -31,27 +31,14 @@ describe('getCourses', () => {
     })
 
     it('should return courses', async () => {
-        const result = await getCourses(mockValidCourses)
+        const result: Course[] = await getCourses(mockValidCourses)
 
-        const expectedResult = [
-            // Add expected result based on the structure of htmlMock1
-        ]
-
-        expect(result).toEqual(expectedResult)
+        expect(result).toHaveLength(4)
+        expect(result).toMatchSnapshot()
     })
 
-    it('should return courses for HTML mock 2', async () => {
-        // Mock the getCourseHTML function to return the second HTML mock
-        ;(getCourseHTML as jest.Mock).mockResolvedValue(mocks.htmlMock2)
-
-        const result = await getCourses()
-
-        // Expected result based on htmlMock2
-        const expectedResult = [
-            // Add expected result based on the structure of htmlMock2
-        ]
-
-        expect(result).toEqual(expectedResult)
+    it('should fail if a course does not exist', async () => {
+        expect(async () => await getCourses(mockNonExistentCourses)).toThrow()
     })
 
     // Add more tests for additional mocks as needed
