@@ -25,6 +25,7 @@
         "typescript-eslint": "^7.16.0"
     },
     "dependencies": {
+        "express": "^4.19.2",
         "jest-environment-jsdom": "^29.7.0",
         "puppeteer-core": "^22.12.1"
     }
