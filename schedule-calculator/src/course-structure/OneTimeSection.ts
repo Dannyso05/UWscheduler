@@ -1,5 +1,5 @@
 import Timeslot from './Timeslot'
-import Section from './Section'
+import Section, { SectionTypes } from './Section'
 import WeeklySection from './WeeklySection'
 import { Component } from './Component'
 import { Campus } from './Campus'
@@ -65,6 +65,10 @@ export default class OneTimeSection extends Section {
         }
 
         return false
+    }
+
+    toDict() {
+        return { ...super.toDict(), type: SectionTypes.OneTime, date: this.date, timeslot: this.timeslot.toDict()}
     }
 
     get date(): Date {

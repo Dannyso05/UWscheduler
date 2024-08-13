@@ -74,6 +74,13 @@ export default class Timeslot {
         )
     }
 
+    toDict() {
+        return {
+            startTime: this.startTime.toDict(),
+            endTime: this.endTime.toDict()
+        }
+    }
+
     static fromString(timeslotStr: string) {
         const [startStr, endStr] = timeslotStr.split('-')
 

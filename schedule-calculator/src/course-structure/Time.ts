@@ -40,6 +40,13 @@ export default class Time {
         )
     }
 
+    toDict() {
+        return {
+            hours: this.hours,
+            minutes: this.minutes
+        }
+    }
+
     toString(): string {
         return this.hours.toString() + ':' + this.minutes.toString()
     }

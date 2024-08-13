@@ -1,5 +1,5 @@
 import Timeslot from './Timeslot'
-import Section from './Section'
+import Section, { SectionTypes } from './Section'
 import OneTimeSection from './OneTimeSection'
 import { Days } from './Days'
 import { Component } from './Component'
@@ -89,6 +89,10 @@ export default class WeeklySection extends Section {
             }
         }
         return false
+    }
+
+    toDict() {
+        return { ...super.toDict(), type: SectionTypes.Weekly, days: this.days, timeslot: this.timeslot.toDict()}
     }
 
     get days(): Days[] {
