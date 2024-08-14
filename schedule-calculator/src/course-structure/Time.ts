@@ -43,7 +43,7 @@ export default class Time {
     toDict() {
         return {
             hours: this.hours,
-            minutes: this.minutes
+            minutes: this.minutes,
         }
     }
 

@@ -127,4 +127,7 @@ export default abstract class Section {
     }
 }
 
-export enum SectionTypes { Weekly = 'weekly', OneTime = 'one-time' }
+export enum SectionTypes {
+    Weekly = 'weekly',
+    OneTime = 'one-time',
+}

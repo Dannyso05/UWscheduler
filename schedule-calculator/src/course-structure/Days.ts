@@ -1,36 +1,17 @@
+import { convertValueToEnum } from '../utils'
+
 export enum Days {
-    sunday,
-    monday,
-    tuesday,
-    wednesday,
-    thursday,
-    friday,
-    saturday,
+    sunday = 'U',
+    monday = 'M',
+    tuesday = 'T',
+    wednesday = 'W',
+    thursday = 'Th',
+    friday = 'F',
+    saturday = 'S',
 }
 
 export function stringToDaysList(daysStr: string) {
-    return (daysStr.match(/[A-Z][a-z]*/g) || []).map((dayStr) =>
-        stringToDay(dayStr)
+    return (daysStr.match(/[A-Z][a-z]*/g) || []).map((dayStr: string) =>
+        convertValueToEnum(dayStr, Days)
     )
-}
-
-function stringToDay(dayStr) {
-    switch (dayStr) {
-        case 'U':
-            return Days.sunday
-        case 'M':
-            return Days.monday
-        case 'T':
-            return Days.tuesday
-        case 'W':
-            return Days.wednesday
-        case 'Th':
-            return Days.thursday
-        case 'F':
-            return Days.friday
-        case 'S':
-            return Days.saturday
-        default:
-            return null
-    }
 }

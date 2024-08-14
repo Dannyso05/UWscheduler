@@ -6,20 +6,20 @@ exports[`getCourses should return courses 1`] = `
     "_catalogNumber": 136,
     "_catalogNumberSurfix": "L",
     "_components": Map {
-      12 => [
+      "LAB" => [
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6946,
-          "_component": 12,
+          "_component": "LAB",
           "_componentNumber": 1,
           "_courseName": "CS 136",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 59,
           "_enrolTotal": 58,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 16,
@@ -32,18 +32,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6947,
-          "_component": 12,
+          "_component": "LAB",
           "_componentNumber": 2,
           "_courseName": "CS 136",
           "_days": [
-            4,
+            "Th",
           ],
           "_enrolCap": 59,
           "_enrolTotal": 58,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 16,
@@ -61,18 +61,18 @@ exports[`getCourses should return courses 1`] = `
     "_instructors": [],
     "_sections": [
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6946,
-        "_component": 12,
+        "_component": "LAB",
         "_componentNumber": 1,
         "_courseName": "CS 136",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 59,
         "_enrolTotal": 58,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 16,
@@ -85,18 +85,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6947,
-        "_component": 12,
+        "_component": "LAB",
         "_componentNumber": 2,
         "_courseName": "CS 136",
         "_days": [
-          4,
+          "Th",
         ],
         "_enrolCap": 59,
         "_enrolTotal": 58,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 16,
@@ -117,21 +117,21 @@ exports[`getCourses should return courses 1`] = `
     "_catalogNumber": 135,
     "_catalogNumberSurfix": "",
     "_components": Map {
-      0 => [
+      "LEC" => [
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6344,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 1,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 80,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 9,
@@ -144,19 +144,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6371,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 2,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 74,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -169,19 +169,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6336,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 3,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 87,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -194,19 +194,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6337,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 4,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 89,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -219,19 +219,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6345,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 5,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 81,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -244,19 +244,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6346,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 6,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 62,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -269,19 +269,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6372,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 7,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 89,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -294,19 +294,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6379,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 8,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 82,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 15,
@@ -319,19 +319,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6380,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 9,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 80,
           "_enrolTotal": 66,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -344,19 +344,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6800,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 10,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 70,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -369,19 +369,19 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 8639,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 12,
           "_courseName": "CS 135",
           "_days": [
-            2,
-            4,
+            "T",
+            "Th",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 71,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 15,
@@ -394,20 +394,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
       ],
-      9 => [
+      "TUT" => [
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6967,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 101,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 59,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 9,
@@ -420,18 +420,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6968,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 102,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 47,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 10,
@@ -444,18 +444,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6969,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 103,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 47,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -468,18 +468,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6970,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 104,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 51,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -492,18 +492,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6971,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 105,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 60,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 13,
@@ -516,18 +516,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6972,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 106,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 41,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -540,18 +540,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6973,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 107,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 53,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 15,
@@ -564,18 +564,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6974,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 108,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 38,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 10,
@@ -588,18 +588,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6975,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 109,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 40,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -612,18 +612,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6976,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 110,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 58,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -636,18 +636,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6977,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 111,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 49,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 13,
@@ -660,18 +660,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6978,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 112,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 58,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -684,18 +684,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6979,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 113,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 61,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 15,
@@ -708,18 +708,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6980,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 114,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 51,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 10,
@@ -732,18 +732,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 7003,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 116,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 58,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -756,18 +756,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 7004,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 117,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 42,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 13,
@@ -780,18 +780,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 7007,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 118,
           "_courseName": "CS 135",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 55,
           "_enrolTotal": 38,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -804,18 +804,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
       ],
-      8 => [
+      "TST" => [
         OneTimeSection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6827,
-          "_component": 8,
+          "_component": "TST",
           "_componentNumber": 201,
           "_courseName": "CS 135",
           "_date": 2024-10-28T04:00:00.000Z,
           "_enrolCap": 980,
           "_enrolTotal": 851,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 20,
@@ -833,19 +833,19 @@ exports[`getCourses should return courses 1`] = `
     "_instructors": [],
     "_sections": [
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6344,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 1,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 80,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 9,
@@ -858,19 +858,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6371,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 2,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 74,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -883,19 +883,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6336,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 3,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 87,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -908,19 +908,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6337,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 4,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 89,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -933,19 +933,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6345,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 5,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 81,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -958,19 +958,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6346,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 6,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 62,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -983,19 +983,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6372,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 7,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 89,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -1008,19 +1008,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6379,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 8,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 82,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 15,
@@ -1033,19 +1033,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6380,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 9,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 80,
         "_enrolTotal": 66,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -1058,19 +1058,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6800,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 10,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 70,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -1083,19 +1083,19 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 8639,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 12,
         "_courseName": "CS 135",
         "_days": [
-          2,
-          4,
+          "T",
+          "Th",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 71,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 15,
@@ -1108,18 +1108,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6967,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 101,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 59,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 9,
@@ -1132,18 +1132,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6968,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 102,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 47,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 10,
@@ -1156,18 +1156,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6969,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 103,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 47,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -1180,18 +1180,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6970,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 104,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 51,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -1204,18 +1204,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6971,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 105,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 60,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 13,
@@ -1228,18 +1228,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6972,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 106,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 41,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -1252,18 +1252,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6973,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 107,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 53,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 15,
@@ -1276,18 +1276,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6974,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 108,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 38,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 10,
@@ -1300,18 +1300,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6975,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 109,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 40,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -1324,18 +1324,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6976,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 110,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 58,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -1348,18 +1348,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6977,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 111,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 49,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 13,
@@ -1372,18 +1372,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6978,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 112,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 58,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -1396,18 +1396,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6979,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 113,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 61,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 15,
@@ -1420,18 +1420,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6980,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 114,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 51,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 10,
@@ -1444,18 +1444,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 7003,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 116,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 58,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -1468,18 +1468,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 7004,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 117,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 42,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 13,
@@ -1492,18 +1492,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 7007,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 118,
         "_courseName": "CS 135",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 55,
         "_enrolTotal": 38,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -1516,16 +1516,16 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       OneTimeSection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6827,
-        "_component": 8,
+        "_component": "TST",
         "_componentNumber": 201,
         "_courseName": "CS 135",
         "_date": 2024-10-28T04:00:00.000Z,
         "_enrolCap": 980,
         "_enrolTotal": 851,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 20,
@@ -1546,22 +1546,22 @@ exports[`getCourses should return courses 1`] = `
     "_catalogNumber": 135,
     "_catalogNumberSurfix": "",
     "_components": Map {
-      0 => [
+      "LEC" => [
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6192,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 1,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 51,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 10,
@@ -1574,20 +1574,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6536,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 2,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 53,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 15,
@@ -1600,20 +1600,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6549,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 3,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 53,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 16,
@@ -1626,20 +1626,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6554,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 4,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 57,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -1652,20 +1652,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6555,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 5,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 53,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 13,
@@ -1678,20 +1678,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6553,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 6,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 60,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -1704,20 +1704,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6556,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 7,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 58,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -1730,20 +1730,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6551,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 8,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 55,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 9,
@@ -1756,20 +1756,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6552,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 9,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 52,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 10,
@@ -1782,20 +1782,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6561,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 10,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 54,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 10,
@@ -1808,20 +1808,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6856,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 11,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 70,
           "_enrolTotal": 71,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -1834,20 +1834,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6857,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 12,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 70,
           "_enrolTotal": 72,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -1860,20 +1860,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6558,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 16,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 59,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 16,
@@ -1886,20 +1886,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6562,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 17,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 54,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -1912,20 +1912,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6852,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 18,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 56,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -1938,20 +1938,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6853,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 19,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 56,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 13,
@@ -1964,20 +1964,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6854,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 20,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 60,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -1990,20 +1990,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6191,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 21,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 18,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 9,
@@ -2016,20 +2016,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6193,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 22,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 59,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -2042,20 +2042,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6417,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 23,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 53,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 14,
@@ -2068,20 +2068,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6550,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 24,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 55,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 17,
@@ -2094,20 +2094,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6855,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 25,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 57,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 16,
@@ -2120,20 +2120,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6194,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 26,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 52,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -2146,20 +2146,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6559,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 27,
           "_courseName": "MATH 135",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 60,
           "_enrolTotal": 52,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 17,
@@ -2172,20 +2172,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
       ],
-      9 => [
+      "TUT" => [
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 9336,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 101,
           "_courseName": "MATH 135",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 120,
           "_enrolTotal": 104,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 18,
@@ -2198,18 +2198,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 9337,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 102,
           "_courseName": "MATH 135",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 180,
           "_enrolTotal": 163,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 18,
@@ -2222,18 +2222,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 9338,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 103,
           "_courseName": "MATH 135",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 120,
           "_enrolTotal": 118,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 18,
@@ -2246,18 +2246,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 9339,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 104,
           "_courseName": "MATH 135",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 320,
           "_enrolTotal": 304,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 18,
@@ -2270,18 +2270,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 9341,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 106,
           "_courseName": "MATH 135",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 300,
           "_enrolTotal": 285,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 18,
@@ -2294,18 +2294,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 9342,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 107,
           "_courseName": "MATH 135",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 300,
           "_enrolTotal": 242,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 18,
@@ -2318,18 +2318,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 9343,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 108,
           "_courseName": "MATH 135",
           "_days": [
-            2,
+            "T",
           ],
           "_enrolCap": 120,
           "_enrolTotal": 104,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 18,
@@ -2342,18 +2342,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
       ],
-      8 => [
+      "TST" => [
         OneTimeSection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6835,
-          "_component": 8,
+          "_component": "TST",
           "_componentNumber": 201,
           "_courseName": "MATH 135",
           "_date": 2024-10-07T04:00:00.000Z,
           "_enrolCap": 1460,
           "_enrolTotal": 1320,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 20,
@@ -2371,20 +2371,20 @@ exports[`getCourses should return courses 1`] = `
     "_instructors": [],
     "_sections": [
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6192,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 1,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 51,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 10,
@@ -2397,20 +2397,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6536,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 2,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 53,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 15,
@@ -2423,18 +2423,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 9336,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 101,
         "_courseName": "MATH 135",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 120,
         "_enrolTotal": 104,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 18,
@@ -2447,20 +2447,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6549,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 3,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 53,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 16,
@@ -2473,20 +2473,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6554,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 4,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 57,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -2499,20 +2499,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6555,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 5,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 53,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 13,
@@ -2525,18 +2525,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 9337,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 102,
         "_courseName": "MATH 135",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 180,
         "_enrolTotal": 163,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 18,
@@ -2549,20 +2549,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6553,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 6,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 60,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -2575,20 +2575,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6556,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 7,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 58,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -2601,18 +2601,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 9338,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 103,
         "_courseName": "MATH 135",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 120,
         "_enrolTotal": 118,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 18,
@@ -2625,20 +2625,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6551,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 8,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 55,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 9,
@@ -2651,20 +2651,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6552,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 9,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 52,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 10,
@@ -2677,20 +2677,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6561,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 10,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 54,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 10,
@@ -2703,20 +2703,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6856,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 11,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 70,
         "_enrolTotal": 71,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -2729,20 +2729,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6857,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 12,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 70,
         "_enrolTotal": 72,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -2755,18 +2755,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 9339,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 104,
         "_courseName": "MATH 135",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 320,
         "_enrolTotal": 304,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 18,
@@ -2779,20 +2779,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6558,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 16,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 59,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 16,
@@ -2805,20 +2805,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6562,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 17,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 54,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -2831,20 +2831,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6852,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 18,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 56,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -2857,20 +2857,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6853,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 19,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 56,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 13,
@@ -2883,20 +2883,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6854,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 20,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 60,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -2909,18 +2909,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 9341,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 106,
         "_courseName": "MATH 135",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 300,
         "_enrolTotal": 285,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 18,
@@ -2933,20 +2933,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6191,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 21,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 18,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 9,
@@ -2959,20 +2959,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6193,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 22,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 59,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -2985,20 +2985,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6417,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 23,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 53,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 14,
@@ -3011,20 +3011,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6550,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 24,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 55,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 17,
@@ -3037,20 +3037,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6855,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 25,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 57,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 16,
@@ -3063,18 +3063,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 9342,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 107,
         "_courseName": "MATH 135",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 300,
         "_enrolTotal": 242,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 18,
@@ -3087,20 +3087,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6194,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 26,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 52,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -3113,20 +3113,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6559,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 27,
         "_courseName": "MATH 135",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 60,
         "_enrolTotal": 52,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 17,
@@ -3139,18 +3139,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 9343,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 108,
         "_courseName": "MATH 135",
         "_days": [
-          2,
+          "T",
         ],
         "_enrolCap": 120,
         "_enrolTotal": 104,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 18,
@@ -3163,16 +3163,16 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       OneTimeSection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6835,
-        "_component": 8,
+        "_component": "TST",
         "_componentNumber": 201,
         "_courseName": "MATH 135",
         "_date": 2024-10-07T04:00:00.000Z,
         "_enrolCap": 1460,
         "_enrolTotal": 1320,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 20,
@@ -3193,22 +3193,22 @@ exports[`getCourses should return courses 1`] = `
     "_catalogNumber": 136,
     "_catalogNumberSurfix": "",
     "_components": Map {
-      0 => [
+      "LEC" => [
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6858,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 1,
           "_courseName": "MATH 136",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 54,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 11,
@@ -3221,20 +3221,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6859,
-          "_component": 0,
+          "_component": "LEC",
           "_componentNumber": 2,
           "_courseName": "MATH 136",
           "_days": [
-            1,
-            3,
-            5,
+            "M",
+            "W",
+            "F",
           ],
           "_enrolCap": 90,
           "_enrolTotal": 62,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 12,
@@ -3247,20 +3247,20 @@ exports[`getCourses should return courses 1`] = `
           },
         },
       ],
-      9 => [
+      "TUT" => [
         WeeklySection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6860,
-          "_component": 9,
+          "_component": "TUT",
           "_componentNumber": 101,
           "_courseName": "MATH 136",
           "_days": [
-            5,
+            "F",
           ],
           "_enrolCap": 180,
           "_enrolTotal": 116,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 15,
@@ -3273,18 +3273,18 @@ exports[`getCourses should return courses 1`] = `
           },
         },
       ],
-      8 => [
+      "TST" => [
         OneTimeSection {
-          "_campus": 0,
+          "_campus": "UW",
           "_classNumber": 6861,
-          "_component": 8,
+          "_component": "TST",
           "_componentNumber": 201,
           "_courseName": "MATH 136",
           "_date": 2024-10-07T04:00:00.000Z,
           "_enrolCap": 180,
           "_enrolTotal": 116,
           "_instructor": "",
-          "_locationTaught": 0,
+          "_locationTaught": "U",
           "_timeslot": Timeslot {
             "_endTime": Time {
               "_hours": 20,
@@ -3302,20 +3302,20 @@ exports[`getCourses should return courses 1`] = `
     "_instructors": [],
     "_sections": [
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6858,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 1,
         "_courseName": "MATH 136",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 54,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 11,
@@ -3328,20 +3328,20 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6859,
-        "_component": 0,
+        "_component": "LEC",
         "_componentNumber": 2,
         "_courseName": "MATH 136",
         "_days": [
-          1,
-          3,
-          5,
+          "M",
+          "W",
+          "F",
         ],
         "_enrolCap": 90,
         "_enrolTotal": 62,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 12,
@@ -3354,18 +3354,18 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       WeeklySection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6860,
-        "_component": 9,
+        "_component": "TUT",
         "_componentNumber": 101,
         "_courseName": "MATH 136",
         "_days": [
-          5,
+          "F",
         ],
         "_enrolCap": 180,
         "_enrolTotal": 116,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 15,
@@ -3378,16 +3378,16 @@ exports[`getCourses should return courses 1`] = `
         },
       },
       OneTimeSection {
-        "_campus": 0,
+        "_campus": "UW",
         "_classNumber": 6861,
-        "_component": 8,
+        "_component": "TST",
         "_componentNumber": 201,
         "_courseName": "MATH 136",
         "_date": 2024-10-07T04:00:00.000Z,
         "_enrolCap": 180,
         "_enrolTotal": 116,
         "_instructor": "",
-        "_locationTaught": 0,
+        "_locationTaught": "U",
         "_timeslot": Timeslot {
           "_endTime": Time {
             "_hours": 20,

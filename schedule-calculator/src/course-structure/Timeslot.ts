@@ -77,7 +77,7 @@ export default class Timeslot {
     toDict() {
         return {
             startTime: this.startTime.toDict(),
-            endTime: this.endTime.toDict()
+            endTime: this.endTime.toDict(),
         }
     }
 

@@ -92,7 +92,12 @@ export default class WeeklySection extends Section {
     }
 
     toDict() {
-        return { ...super.toDict(), type: SectionTypes.Weekly, days: this.days, timeslot: this.timeslot.toDict()}
+        return {
+            ...super.toDict(),
+            type: SectionTypes.Weekly,
+            days: this.days,
+            timeslot: this.timeslot.toDict(),
+        }
     }
 
     get days(): Days[] {

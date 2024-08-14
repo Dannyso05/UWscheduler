@@ -68,7 +68,12 @@ export default class OneTimeSection extends Section {
     }
 
     toDict() {
-        return { ...super.toDict(), type: SectionTypes.OneTime, date: this.date, timeslot: this.timeslot.toDict()}
+        return {
+            ...super.toDict(),
+            type: SectionTypes.OneTime,
+            date: this.date,
+            timeslot: this.timeslot.toDict(),
+        }
     }
 
     get date(): Date {

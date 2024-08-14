@@ -2,22 +2,16 @@ import { JSDOM } from 'jsdom'
 
 import Section from '../course-structure/Section'
 import WeeklySection from '../course-structure/WeeklySection'
-import {
-    Component,
-    isOneTimeComponent,
-    stringToComponent,
-} from '../course-structure/Component'
-import { Campus, stringToCampus } from '../course-structure/Campus'
-import {
-    LocationTaught,
-    stringToLocationTaught,
-} from '../course-structure/LocationTaught'
+import { Component, isOneTimeComponent } from '../course-structure/Component'
+import { Campus } from '../course-structure/Campus'
+import { LocationTaught } from '../course-structure/LocationTaught'
 import Timeslot from '../course-structure/Timeslot'
 import { Days, stringToDaysList } from '../course-structure/Days'
 import OneTimeSection from '../course-structure/OneTimeSection'
 import Course from '../course-structure/Course'
 import puppeteer from 'puppeteer'
 import getCourseHTML from './get_course_html'
+import { convertValueToEnum } from '../utils'
 
 export default class GetCourseError extends Error {}
 
@@ -37,7 +31,7 @@ function componentParser(
     const [componentString, componentNumberString] = node.textContent.split(' ')
 
     sectionDict.componentNumber = +componentNumberString
-    sectionDict.component = stringToComponent(componentString)
+    sectionDict.component = convertValueToEnum(componentString, Component)
 }
 
 function campusAndLocationParser(
@@ -46,8 +40,11 @@ function campusAndLocationParser(
 ) {
     const [campusStr, loactionTaughtStr] = node.textContent.split(/\s+/)
 
-    sectionDict.campus = stringToCampus(campusStr)
-    sectionDict.locationTaught = stringToLocationTaught(loactionTaughtStr)
+    sectionDict.campus = convertValueToEnum(campusStr, Campus)
+    sectionDict.locationTaught = convertValueToEnum(
+        loactionTaughtStr,
+        LocationTaught
+    )
 }
 
 function associateClassNumberParser(
