@@ -1,6 +1,7 @@
 import { getCourses } from '../schedule-calculator/src/get-course/get_courses'
 import express from 'express'
-import ScheduleCalculator from './src/ScheduleCalculator'
+import calculateSchedules from './src/ScheduleCalculator'
+import IsOpenConstraint from './src/constraints/IsOpenConstraint'
 
 const express = require('express')
 const cors = require('cors')
@@ -27,10 +28,10 @@ app.post('/courses', async (req, res) => {
                 term: '1249',
             })
         )
-        const packages = await getCourses(packet, false)
-        const sched = ScheduleCalculator.calculateSchedules([], packages, [])
+        const packages = await getCourses(packet)
+        const sched = calculateSchedules([], packages, [new IsOpenConstraint()])
 
-        console.log(sched)
+        console.log(JSON.stringify(sched))
         res.json(sched)
     } catch (error) {
         // Handle any errors that occur during the function execution
