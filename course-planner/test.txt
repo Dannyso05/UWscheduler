@@ -1,0 +1,5 @@
+A course is a dict with a ton of course info, including the prereq_schema
+
+A prereq_schema is either:
+    1. A {"course": string, "requirements": [list of strings]}
+    2. A {"operator": {"AND", "OR"}, "prereq_schemas": [list of type prereq_schema]}
